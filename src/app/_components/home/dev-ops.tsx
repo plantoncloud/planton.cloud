@@ -1,16 +1,9 @@
-'use client';
-
 import { FC } from 'react';
 import Image from 'next/image';
 
 import { East } from '@mui/icons-material';
-import { Box, Stack, Typography, styled } from '@mui/material';
-
-const StyledDevOpsContainer = styled(Box)(() => ({
-  borderRadius: 'var(--Measure-pixels-24, 24px)',
-  background:
-    'linear-gradient(133deg, #E57C00 -32.56%, rgba(67, 11, 159, 0.67) 21.82%, rgba(12, 0, 155, 0.40) 61.68%, rgba(0, 0, 0, 0.00) 100.63%)',
-}));
+import { Box, Stack, Typography } from '@mui/material';
+import { StyledDevOpsContainer } from '@/app/_components';
 
 export const DevOpsSection: FC = () => {
   return (

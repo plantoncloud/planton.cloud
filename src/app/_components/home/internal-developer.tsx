@@ -1,20 +1,10 @@
-'use client';
-
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import Image from 'next/image';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 import { East, Email } from '@mui/icons-material';
-
-import { styled } from '@mui/system';
-import { ChipIacWorkflow } from '../common';
-
-const StyledLayoutContainer = styled(Box)(() => ({
-  backgroundImage:
-    'linear-gradient(20deg, rgba(0,0,0,1) 0%, transparent 75%, rgba(0,0,0,0) 100%), linear-gradient(90deg, rgba(0,0,0,1) 0%, transparent 20%, rgba(0,0,0,0) 100%), url(/images/home/home-bg.png)',
-  left: 0,
-}));
+import { RolesComponent, StyledLayoutContainer, ChipIacWorkflow } from '@/app/_components';
 
 interface OrgLogoProps {
   width: number | `${number}` | undefined;
@@ -45,47 +35,6 @@ const OrgList: FC = () => {
       <OrgLogo width={111} alt="Basecamp" src="images/home/basecamp.svg" />
       <OrgLogo width={82} alt="Trelo" src="images/home/trello.svg" />
     </Stack>
-  );
-};
-
-const RolesComponent: FC = () => {
-  const words = [
-    'Platform',
-    'Portal',
-    'Toolkit',
-    'Sidekick',
-    'Wingman',
-    'Companion',
-    'Partner',
-    'Helper',
-    'Assistant',
-  ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 1250);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <Box className="word-carousel h-10">
-      <Box className="word-carousel-container" style={{ marginTop: `-${60 * currentIndex + 7}px` }}>
-        {words.map((word, index) => (
-          <Typography
-            key={index}
-            className={`text-teal-600 leading-[59.61px] text-4xl font-extrabold word ${
-              currentIndex === index ? 'visible' : ''
-            }`}
-          >
-            {word}
-          </Typography>
-        ))}
-      </Box>
-    </Box>
   );
 };
 

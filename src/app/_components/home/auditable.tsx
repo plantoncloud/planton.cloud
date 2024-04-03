@@ -1,10 +1,8 @@
-"use client";
+import { FC, ReactNode } from 'react';
+import Image from 'next/image';
 
-import { FC, ReactNode } from "react";
-import Image from "next/image";
-
-import { East } from "@mui/icons-material";
-import { Box, Stack, Typography } from "@mui/material";
+import { East } from '@mui/icons-material';
+import { Box, Stack, Typography } from '@mui/material';
 
 interface AuditableDiscoverBoxProps {
   children: ReactNode;

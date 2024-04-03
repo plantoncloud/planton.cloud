@@ -1,12 +1,10 @@
-'use client';
-
 import { FC } from 'react';
 import Image from 'next/image';
 
 import { East } from '@mui/icons-material';
 import { Box, Link, Stack, Typography } from '@mui/material';
 
-import { styled } from '@mui/system';
+import { StyledDashboardImg } from '@/app/_components';
 
 interface CodeCloudLabelProps {
   label: string;
@@ -52,11 +50,6 @@ const DevOpsRealm: FC = () => {
     </Stack>
   );
 };
-
-const StyledDashboardImg = styled(Box)(() => ({
-  backgroundImage:
-    'linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.95) 100%), url(/images/home/dashboard.svg)',
-}));
 
 export const CodeCloudSection: FC = () => {
   return (

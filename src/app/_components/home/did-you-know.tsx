@@ -1,18 +1,9 @@
-"use client";
+import { FC } from 'react';
+import Image from 'next/image';
 
-import { FC } from "react";
-import Image from "next/image";
-
-import { East } from "@mui/icons-material";
-import { Box, Stack, Typography } from "@mui/material";
-
-import { styled } from "@mui/system";
-
-const StyledCloudNativeContainer = styled(Box)(() => ({
-  orderRadius: "var(--Measure-pixels-24, 24px)",
-  background:
-    "linear-gradient(133deg, #00BABA -23.75%, rgba(159, 11, 108, 0.67) 30.1%, rgba(0, 0, 0, 0.00) 97.94%)",
-}));
+import { East } from '@mui/icons-material';
+import { Box, Stack, Typography } from '@mui/material';
+import { StyledCloudNativeContainer } from '@/app/_components';
 
 export const DidYouKnowSection: FC = () => {
   return (

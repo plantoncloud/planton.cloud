@@ -8,7 +8,8 @@ import { usePathname, useRouter } from 'next/navigation';
 import { OpenInNew } from '@mui/icons-material';
 import { Box, Button, Stack, Tab, Tabs, Typography } from '@mui/material';
 
-import { ProductMenu, productMainMenus } from './menu';
+import { ProductMenu } from '@/app/_components';
+import { productMainMenus } from '@/app/_utils/constants';
 
 interface MenuSectionProps {
   children: ReactNode;

@@ -1,19 +1,12 @@
-'use client';
-
 import { FC } from 'react';
 import { Box, Stack, Typography, styled } from '@mui/material';
 import { East } from '@mui/icons-material';
-import { RoundBtn } from '@/app/_components';
-
-const StyledLayoutContainer = styled(Stack)(() => ({
-  backgroundImage:
-    'linear-gradient(180deg, transparent 75%, rgba(46,1,54,1) 100%, rgba(0,0,0,1) 10%), url(/images/self-service/self-service-bg.svg)',
-}));
+import { RoundBtn, StyledStreamLineContainer } from '@/app/_components';
 
 export const StreamLineDevOps: FC = () => {
   return (
     <>
-      <StyledLayoutContainer className="w-full h-screen absolute z-10 bg-cover bg-center" />
+      <StyledStreamLineContainer className="w-full h-screen absolute z-10 bg-cover bg-center" />
 
       <Stack className="h-[calc(100vh-150px)] justify-center items-center flex-row">
         <Box className="relative z-10">

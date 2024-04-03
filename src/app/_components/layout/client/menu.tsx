@@ -1,5 +1,5 @@
 'use client';
-import { FC, ReactNode, SyntheticEvent, useEffect, useRef, useState } from 'react';
+import { FC, SyntheticEvent, useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
@@ -15,102 +15,9 @@ import {
   Typography,
   styled,
 } from '@mui/material';
-import { ArrowDropDown, East } from '@mui/icons-material';
-
-import ImgCloud from 'public/images/header/product-menu/cloud.svg';
-import ImgSelfService from 'public/images/header/product-menu/self-service.svg';
-import ImgPulumi from 'public/images/header/product-menu/pulumi.svg';
-import ImgResourceCatalog from 'public/images/header/product-menu/resource-catalog.svg';
-import ImgAuditManagement from 'public/images/header/product-menu/audit-management.svg';
-
-export interface IMenu {
-  icon?: FC;
-  label: string | ReactNode;
-  subLabel?: string | ReactNode;
-  href?: string;
-}
-
-export const productMainMenus: IMenu[] = [
-  {
-    icon: ImgCloud,
-    label: (
-      <Stack direction="row">
-        Code <East fontSize="small" /> Cloud
-      </Stack>
-    ),
-    subLabel: 'Tools to Accelerate Delivery',
-    href: '/code-to-cloud',
-  },
-  {
-    icon: ImgSelfService,
-    label: 'Self-Service DevOps',
-    subLabel: 'Autonomous DevOps, Simplified',
-    href: '/self-service',
-  },
-  {
-    icon: ImgPulumi,
-    label: 'Integrated IaC Workflows',
-    subLabel: 'Powered by Pulumi',
-    href: '/iac-workflow',
-  },
-  {
-    icon: ImgResourceCatalog,
-    label: 'Service Catalog',
-    subLabel: 'CloudNative Component Catalog',
-    href: '/service-catalog',
-  },
-  {
-    icon: ImgAuditManagement,
-    label: 'Auditable Automation',
-    subLabel: 'All Actions, Recorded and Reviewed',
-    href: '/auditable-automation',
-  },
-];
-
-export const getStartedMenus: IMenu[] = [
-  {
-    label: 'Sign Up',
-  },
-  {
-    label: 'Pricing',
-  },
-  {
-    label: 'Contact',
-  },
-];
-
-export const companyMenus: IMenu[] = [
-  {
-    label: 'About Us',
-  },
-  {
-    label: 'Customers',
-  },
-  {
-    label: 'Partners',
-  },
-  {
-    label: 'Careers',
-  },
-  {
-    label: 'Press',
-  },
-  {
-    label: 'Complaince',
-  },
-];
-
-const rightMenus: IMenu[] = [
-  {
-    label: 'All Features',
-  },
-  {
-    label: 'Documentation',
-  },
-  {
-    label: 'Blog',
-  },
-];
+import { ArrowDropDown } from '@mui/icons-material';
+import { IMenu } from '@/app/_utils/interfaces';
+import { productMainMenus, rightMenus } from '@/app/_utils/constants';
 
 const StyledLeftItemContainer = styled(Stack)(({ theme }) => ({
   '&:hover': {
@@ -199,7 +106,7 @@ export const ProductMenu: FC = () => {
               transformOrigin: placement === 'bottom-start' ? 'left top' : 'left bottom',
             }}
           >
-            <Paper className="p-2 bg-neutral-950 rounded-xl border border-neutral-800 backdrop-blur-3xl">
+            <Paper className="p-2 bg-neutral-950 bg-opacity-70 rounded-xl border border-neutral-800 backdrop-blur-3xl">
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList
                   autoFocusItem={open}

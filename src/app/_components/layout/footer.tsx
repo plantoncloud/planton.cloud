@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import { Box, Stack, Typography } from '@mui/material';
-import { IMenu, companyMenus, getStartedMenus, productMainMenus } from './menu';
+import { companyMenus, getStartedMenus, productMainMenus } from '@/app/_utils/constants';
+import { IMenu } from '@/app/_utils/interfaces';
 
 interface ConnectIconProps {
   width?: number | `${number}` | undefined;
@@ -53,8 +54,8 @@ const MenuGroup: FC<MenuGroupProps> = ({ title, items = [] }) => {
   return (
     <Box className="flex-col justify-start items-start gap-3 inline-flex">
       <GrayHeadLabel label={title} />
-      {items.map((itemItem, index) => (
-        <MenuLabel {...itemItem} key={index} />
+      {items.map((item, index) => (
+        <MenuLabel {...item} key={index} />
       ))}
     </Box>
   );
@@ -74,6 +75,10 @@ const menus: MenuGroupProps[] = [
     items: companyMenus,
   },
 ];
+
+const Menus: FC = () => {
+  return menus.map((menuGroup, index) => <MenuGroup {...menuGroup} key={index} />);
+};
 
 export default function Footer() {
   return (
@@ -100,9 +105,7 @@ export default function Footer() {
           </Stack>
           <Stack className="flex-row grow justify-center">
             <Stack className="flex-row shrink  justify-start items-start gap-20">
-              {menus.map((menuGroup, index) => (
-                <MenuGroup {...menuGroup} key={index} />
-              ))}
+              <Menus />
             </Stack>
           </Stack>
         </Stack>

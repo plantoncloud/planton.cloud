@@ -1,9 +1,7 @@
-"use client";
-
-import { FC } from "react";
-import { Box } from "@mui/material";
-import Header from "./header";
-import Footer from "./footer";
+import { FC } from 'react';
+import { Box } from '@mui/material';
+import Header from './client/header';
+import Footer from './footer';
 
 interface LayoutProps {
   children: React.ReactNode;
