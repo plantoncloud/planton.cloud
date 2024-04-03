@@ -30,7 +30,7 @@ export const productMainMenus: IMenu[] = [
     icon: ImgPulumi,
     label: 'Integrated IaC Workflows',
     subLabel: 'Powered by Pulumi',
-    href: '/integrated-iac-workflow',
+    href: '/iac-workflow',
   },
   {
     icon: ImgResourceCatalog,
