@@ -54,7 +54,7 @@ export const DidYouKnowSection: FC = () => {
               Planton Cloud{' '}
             </Typography>
             <Typography variant="caption" className="text-teal-600 text-2xl font-semibold ">
-              Instant IaC Workflows
+              Integrated IaC Workflows
             </Typography>
             <Typography variant="caption" className="text-white text-2xl font-semibold ">
               {' '}

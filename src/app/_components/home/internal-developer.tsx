@@ -44,7 +44,7 @@ export const InternalDeveloperSection: FC = () => {
       <StyledLayoutContainer className="w-full h-[796px] absolute z-0 bg-cover" />
       <Stack className="pl-64 pt-28 gap-14">
         <Stack className="gap-7 z-10">
-          <ChipIacWorkflow>Introducing Instant IaC Workflows</ChipIacWorkflow>
+          <ChipIacWorkflow>Introducing Integrated IaC Workflows</ChipIacWorkflow>
 
           <Stack className="justify-start items-start gap-3">
             <Stack className="flex-col justify-start items-start">

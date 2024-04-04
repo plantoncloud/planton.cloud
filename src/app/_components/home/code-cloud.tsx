@@ -43,7 +43,7 @@ const DevOpsRealm: FC = () => {
       </Typography>
       <Stack className="flex-row justify-center items-center gap-6 ">
         <DevOpsChip label="Self-Service DevOps" link="/self-service" />
-        <DevOpsChip label="Instant IaC Workflows" link="/iac-workflow" />
+        <DevOpsChip label="Integrated IaC Workflows" link="/iac-workflow" />
         <DevOpsChip label="Service Catalog" link="/service-catalog" />
         <DevOpsChip label="Auditable Automation" link="/auditable-automation" />
       </Stack>

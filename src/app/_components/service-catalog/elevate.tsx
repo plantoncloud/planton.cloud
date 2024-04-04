@@ -45,7 +45,7 @@ export const Elevate: FC = () => {
             <br />
             pipeline execution
           </Typography>
-          <ChipIacWorkflow>Introducing Instant IaC Workflows</ChipIacWorkflow>
+          <ChipIacWorkflow>Introducing Integrated IaC Workflows</ChipIacWorkflow>
           <RoundBtn endIcon={<East />} className="bg-white text-black">
             Get Started
           </RoundBtn>
