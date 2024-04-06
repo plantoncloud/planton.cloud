@@ -7,12 +7,11 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
   growingBar: {
-    animation: '$grow 6s linear infinite',
+    animation: '$grow 3s linear',
   },
   '@keyframes grow': {
     '0%': { width: '1%' },
-    '50%': { width: '100%' },
-    '100%': { width: '0%' },
+    '100%': { width: '100%' },
   },
 });
 

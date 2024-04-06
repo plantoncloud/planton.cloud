@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { Box, Divider, Grid, Link, Stack, Typography, TypographyProps } from '@mui/material';
 import { BoldLabel, ChipLabel } from './what-is-auditable-automation';
-import { RoundBtnSmall } from '@/app/_components';
+import { FooterBanner, RoundBtnSmall } from '@/app/_components';
 import { REQUEST_DEMO_URL } from '@/app/_utils/constants';
 
 const SemiboldLabel: FC<TypographyProps> = (props) => {
@@ -17,7 +17,7 @@ const SemiboldLabel: FC<TypographyProps> = (props) => {
   );
 };
 
-const MediumLabel: FC<TypographyProps> = (props) => {
+export const MediumLabel: FC<TypographyProps> = (props) => {
   return (
     <Typography
       {...props}
@@ -90,9 +90,9 @@ export const ImportanceOfAuditableTrails: FC = () => {
       </CenteredDivider>
 
       <Box className="relative border border-zinc-800 mt-4">
-        <Box className="absolute left-[33.33%] w-px h-full border border-red-600 shadow-md z-0"></Box>
+        <Box className="absolute left-[33.33%] w-px h-[calc(100%-175px)] border border-red-600 shadow-md z-0"></Box>
         <Box className="absolute left-[33%] w-3 h-60 top-[440px] bg-neutral-950 shadow-md blur-sm z-0"></Box>
-        <Box className="absolute left-[33.30%] w-1 h-60 top-[440px] bg-red-600 blur-md shadow-md z-10"></Box>
+        <Box className="absolute left-[33.30%] w-1 h-60 top-[440px] bg-red-600 blur-md shadow-md z-0"></Box>
 
         <Grid container className="bg-neutral-900">
           <Grid
@@ -268,28 +268,7 @@ export const ImportanceOfAuditableTrails: FC = () => {
           </Grid>
         </Grid>
 
-        <Grid container className="bg-black border border-zinc-800 mt-32">
-          <Grid item xs={8}>
-            <Stack className="pl-6 py-9 bg-black self-stretch justify-center items-start gap-2.5">
-              <MediumLabel>
-                Trial Plantoncloud Enterprise to see our customizable platform, security, and
-                performance in action.
-              </MediumLabel>
-              <Stack className="flex-row justify-start items-center gap-2.5">
-                <RoundBtnSmall>
-                  <Link target="_blank" href={REQUEST_DEMO_URL}>
-                    Request For Demo Today!
-                  </Link>
-                </RoundBtnSmall>
-                <RoundBtnSmall>
-                  <Link target="_blank" href={REQUEST_DEMO_URL}>
-                    Contact Sales
-                  </Link>
-                </RoundBtnSmall>
-              </Stack>
-            </Stack>
-          </Grid>
-        </Grid>
+        <FooterBanner varient='subFooter' />
       </Box>
     </Box>
   );

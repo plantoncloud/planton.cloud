@@ -2,10 +2,12 @@
 
 import React, { FC } from 'react';
 import Image from 'next/image';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, FreeMode, Virtual } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
+import 'swiper/css/free-mode';
+import 'swiper/css/virtual';
 
 const OrgImages = [
   'images/code-to-cloud/ghost.svg',
@@ -19,15 +21,15 @@ export const OrganizationCarousel: FC = () => {
   return (
     <Swiper
       className="mt-16"
-      modules={[Autoplay]}
+      modules={[Autoplay, FreeMode, Virtual]}
       spaceBetween={38}
-      speed={2500}
+      speed={5000}
       effect="fade"
       slidesPerView={5}
+      direction='horizontal'
       autoplay={{
-        delay: 0,
-        waitForTransition: true,
-        reverseDirection: true,
+        delay: 2500,
+        waitForTransition: false,
         disableOnInteraction: false,
       }}
       wrapperClass="flex items-center"

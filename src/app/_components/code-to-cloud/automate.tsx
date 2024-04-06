@@ -49,7 +49,7 @@ export const Automate: FC = () => {
           <ChipIacWorkflow>Introducing Integrated IaC Workflows</ChipIacWorkflow>
         </Box>
         <Stack className="self-stretch items-center gap-10 relative">
-          <Typography className="w-4/12 text-center text-white text-5xl font-extrabold leading-snug z-10">
+          <Typography className="w-5/12 text-center text-white text-5xl font-extrabold leading-snug z-10">
             Automate your workflow <br /> from idea to production with Code{'->'} Cloud
           </Typography>
           <RoundBtn

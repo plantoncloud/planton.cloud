@@ -103,7 +103,7 @@ export const DecodeAndOptimize: FC = () => {
           </Grid>
         ))}
       </Grid>
-      <FooterBanner
+      <FooterBanner varient='sub'
         background={GRADIENT_COLOR_MAPS[GRADIENT_COLOR.BLUE]}
         title="Trial Plantoncloud Enterprise to see our customizable platform, security, and performance in action."
         actions={[

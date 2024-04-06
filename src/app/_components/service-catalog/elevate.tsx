@@ -10,18 +10,16 @@ export const Elevate: FC = () => {
       <Add className="absolute -left-[18px] -top-[18px]" fontSize="large" />
       <Grid container columns={12}>
         {[...Array(72)].map((_, index) => (
-          <Grid
-            item
-            key={index}
-            xs={1}
-            className="border-r border-b border-neutral-700"
-          >
+          <Grid item key={index} xs={1} className="border-r border-b border-neutral-700">
             <Box className="pt-[100%]" />
           </Grid>
         ))}
       </Grid>
       <Stack className="absolute top-[18%] right-28 flex-row justify-end">
-        <ElevateAnimLabel>Elevate your AI frontend with Planton Cloud</ElevateAnimLabel>
+        <ElevateAnimLabel>
+          Elevate your AI frontend with Planton Cloud
+          <span className="block w-[2px] h-full bg-black relative bottom-[40px] left-[5px] animate-blink"></span>
+        </ElevateAnimLabel>
         <Image
           src="/images/service-catalog/polygon-1.svg"
           alt=""
