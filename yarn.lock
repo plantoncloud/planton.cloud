@@ -5950,6 +5950,7 @@ __metadata:
     postcss: ^8.4.35
     react: ^18
     react-dom: ^18
+    react-multi-carousel: ^2.8.5
     sharp: ^0.33.2
     swiper: ^11.1.0
     tailwindcss: ^3.4.1
@@ -6128,6 +6129,13 @@ __metadata:
   version: 18.2.0
   resolution: "react-is@npm:18.2.0"
   checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
+  languageName: node
+  linkType: hard
+
+"react-multi-carousel@npm:^2.8.5":
+  version: 2.8.5
+  resolution: "react-multi-carousel@npm:2.8.5"
+  checksum: aa41112c4ab548570d0c65f9f30cddb1219d1ca7f9e43022a4f7c5fcb394e66028df3bd1a6a907282720ca7b83aeda8c7101fda300f8a32e959ef1cdc11a3db9
   languageName: node
   linkType: hard
 
@@ -7055,7 +7063,7 @@ __metadata:
 
 "typescript@patch:typescript@^5#~builtin<compat/typescript>":
   version: 5.3.3
-  resolution: "typescript@patch:typescript@npm%3A5.3.3#~builtin<compat/typescript>::version=5.3.3&hash=14eedb"
+  resolution: "typescript@patch:typescript@npm%3A5.3.3#~builtin<compat/typescript>::version=5.3.3&hash=29ae49"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
