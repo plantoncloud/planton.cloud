@@ -6,10 +6,12 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
 import { OpenInNew } from '@mui/icons-material';
-import { Box, Button, Stack, Tab, Tabs, Typography } from '@mui/material';
+import { Box, Button, Stack, Tab, Tabs, Typography, useMediaQuery, useTheme } from '@mui/material';
 
 import { ProductMenu } from '@/app/_components';
 import { productMainMenus } from '@/app/_utils/constants';
+import { HeaderMobile } from './header-mobile';
+import { useIsMobile } from '@/app/_utils/hooks';
 
 interface MenuSectionProps {
   children: ReactNode;
@@ -58,7 +60,7 @@ const MenuSection: FC<MenuSectionProps> = ({ children }) => {
   return <Stack className="flex-row items-center gap-4 text-sm">{children}</Stack>;
 };
 
-export default function Header() {
+function HeaderComputer() {
   const pathname = usePathname();
 
   const showSecondaryMenu = useMemo(
@@ -92,4 +94,9 @@ export default function Header() {
       {showSecondaryMenu && <SecondaryMenu />}
     </Box>
   );
+}
+
+export function Header() { 
+  const isMobile = useIsMobile();
+  return isMobile ? <HeaderMobile /> : <HeaderComputer />;
 }

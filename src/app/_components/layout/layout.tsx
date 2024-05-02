@@ -1,8 +1,7 @@
 import { FC } from 'react';
 import { Box } from '@mui/material';
-import Header from './client/header';
-import HeaderMobile from './client/header-mobile';
 import Footer from './footer';
+import { Header } from './client/header';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,8 +10,7 @@ interface LayoutProps {
 export const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <Box className="h-screen bg-cover bg-center">
-      {/* <Header /> */}
-      <HeaderMobile />
+      <Header />
       <Box>{children}</Box>
       <Footer />
     </Box>
