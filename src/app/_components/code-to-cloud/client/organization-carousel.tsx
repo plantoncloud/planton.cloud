@@ -16,17 +16,29 @@ const OrgImages = [
   'images/code-to-cloud/basecamp.svg',
   'images/code-to-cloud/trello.svg',
 ];
-
-export const OrganizationCarousel: FC = () => {
+interface IOrganizationCarousel {
+  className?: string;
+  speed?: number;
+  slidesPerView?: number;
+  direction?: 'horizontal' | 'vertical';
+  spaceBetween?: number | string;
+}
+export const OrganizationCarousel: FC<IOrganizationCarousel> = ({
+  speed = 5000,
+  className,
+  slidesPerView = 3,
+  direction = 'horizontal',
+  spaceBetween,
+}) => {
   return (
     <Swiper
-      className="mt-16"
+      className={className}
       modules={[Autoplay, FreeMode, Virtual]}
-      spaceBetween={38}
-      speed={5000}
+      spaceBetween={spaceBetween}
+      speed={speed}
       effect="fade"
-      slidesPerView={5}
-      direction='horizontal'
+      slidesPerView={slidesPerView}
+      direction={direction}
       autoplay={{
         delay: 2500,
         waitForTransition: false,
@@ -36,7 +48,7 @@ export const OrganizationCarousel: FC = () => {
     >
       {[...OrgImages, ...OrgImages].map((src, index) => (
         <SwiperSlide key={index}>
-          <Image width={0} height={0} alt="Ghost" className="w-fit opacity-40" src={src} />
+          <Image width={0} height={0} alt="" className="w-fit" src={src} />
         </SwiperSlide>
       ))}
     </Swiper>

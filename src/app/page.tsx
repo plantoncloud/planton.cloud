@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Box className="container">
+      <Box className="md:container">
         <SpeedInsights />
         <InternalDeveloperSection />
         <CodeCloudSection />
@@ -26,7 +26,6 @@ export default function Home() {
         <DidYouKnowSection />
         <AuditableSection />
       </Box>
-
       <WantToSeePlatform />
     </>
   );

@@ -1,6 +1,5 @@
 'use client';
 import { FC, SyntheticEvent, useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 import {
@@ -26,13 +25,16 @@ const StyledLeftItemContainer = styled(Stack)(({ theme }) => ({
         color: `${theme.palette.primary.main} !important`,
       },
     },
-  }
+  },
 }));
 
 export const ProductMenuItem: FC<IMenu> = ({ label, subLabel, icon: Icon, href }) => {
   return (
-    <Link  href={href ?? ''} className='w-full pl-3 pr-2.5 pt-3 pb-5 backdrop-blur-md md:hover:bg-zinc-900  md:hover:first:rounded-t-xl md:hover:last:rounded-b-xl md:border-b md:last:border-b-0 md:border-zinc-900 '>
-      <StyledLeftItemContainer className="gap-1 justify-center items-start" >
+    <Link
+      href={href ?? ''}
+      className="w-full pl-3 pr-2.5 pt-3 pb-5 backdrop-blur-md md:hover:bg-zinc-900  md:hover:first:rounded-t-xl md:hover:last:rounded-b-xl md:border-b md:last:border-b-0 md:border-zinc-900 "
+    >
+      <StyledLeftItemContainer className="gap-1 justify-center items-start">
         <Stack className="justify-start items-center gap-1.5 flex-row">
           <SvgIcon component={Icon} htmlColor="white" />
           <Typography className="text-neutral-50 text-sm font-semibold ">{label}</Typography>

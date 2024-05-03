@@ -136,10 +136,8 @@ const Legals: FC = () => {
 
 const allRightsLabel = '©2024 Planton Cloud Inc. All Rights Reserved.';
 
-export default function Footer() {
-  const isMobile = useIsMobile();
-
-  return isMobile ? (
+function FooterMobile() {
+  return (
     <Stack>
       <Stack className="px-4 py-5 gap-6">
         <Stack className="flex-row items-center gap-1">
@@ -158,7 +156,11 @@ export default function Footer() {
         </Stack>
       </Stack>
     </Stack>
-  ) : (
+  );
+}
+
+function FooterComputer() {
+  return (
     <Box className="py-8 bg-stone-900 bg-opacity-70 border-2 border-neutral-800 border-opacity-50 backdrop-blur-3xl">
       <Stack className="container grow shrink basis-0 gap-6">
         <Stack className="flex-row self-stretch justify-between gap-96">
@@ -188,5 +190,18 @@ export default function Footer() {
         </Stack>
       </Stack>
     </Box>
+  );
+}
+
+export default function Footer() {
+  return (
+    <>
+      <Box className="hidden md:block">
+        <FooterComputer />
+      </Box>
+      <Box className="md:hidden">
+        <FooterMobile />
+      </Box>
+    </>
   );
 }

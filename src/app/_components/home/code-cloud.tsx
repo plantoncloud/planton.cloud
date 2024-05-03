@@ -34,18 +34,24 @@ const DevOpsChip: FC<DevOpsChipProps> = ({ label, link }) => {
   );
 };
 
+const devOps: DevOpsChipProps[] = [
+  { label: 'Self-Service DevOps', link: '/self-service' },
+  { label: 'Integrated IaC Workflows', link: '/iac-workflow' },
+  { label: 'Service Catalog', link: '/service-catalog' },
+  { label: 'Auditable Automation', link: '/auditable-automation' },
+];
+
 const DevOpsRealm: FC = () => {
   return (
-    <Stack className="flex-row justify-center items-center gap-4">
+    <Stack className=" gap-4 md:flex-row md:justify-center md:items-center">
       {/* <div className="w-[244px] h-[244px] left-0 top-[137px] absolute mix-blend-lighten bg-yellow-400 rounded-full blur-[134px]" /> */}
-      <Typography className="text-center text-white text-xl font-extrabold leading-7">
+      <Typography className="text-white text-xl font-extrabold leading-7">
         Ignite Developer Success With
       </Typography>
-      <Stack className="flex-row justify-center items-center gap-6 ">
-        <DevOpsChip label="Self-Service DevOps" link="/self-service" />
-        <DevOpsChip label="Integrated IaC Workflows" link="/iac-workflow" />
-        <DevOpsChip label="Service Catalog" link="/service-catalog" />
-        <DevOpsChip label="Auditable Automation" link="/auditable-automation" />
+      <Stack className="flex-row justify-center items-center gap-6 overflow-x-auto">
+        {devOps.map((devOp) => (
+          <DevOpsChip {...devOp} />
+        ))}
       </Stack>
     </Stack>
   );
@@ -53,10 +59,10 @@ const DevOpsRealm: FC = () => {
 
 export const CodeCloudSection: FC = () => {
   return (
-    <Stack className="items-center mt-40">
-      <Stack className="p-4 w-fit flex-row gap-4 bg-primary-50 bg-opacity-5 rounded-xl border-2 border-neutral-800 border-opacity-50 backdrop-blur-3xl z-10">
+    <Stack className="mt-16 items-center md:mt-40">
+      <Box className="p-4 w-fit bg-primary-50 bg-opacity-5 rounded-xl border-2 border-neutral-800 border-opacity-50 backdrop-blur-3xl z-10">
         <DevOpsRealm />
-      </Stack>
+      </Box>
       <Box className="w-full relative bg-gradient-to-b from-black via-black to-black h-[1270px]">
         <Box className="w-0.5 h-96 left-[254px] top-[-155px] absolute bg-gradient-to-b from-white via-orange-200 to-black rounded" />
         <Box className="w-0.5 h-96 left-[257px] top-[600px] absolute origin-top-left -rotate-180 bg-gradient-to-b from-black via-orange-200 to-black rounded z-10" />

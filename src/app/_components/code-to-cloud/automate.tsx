@@ -81,7 +81,7 @@ export const Automate: FC = () => {
           <BlurRound />
           <BlurRound />
         </Stack>
-        <OrganizationCarousel />
+        <OrganizationCarousel className="mt-16" slidesPerView={5} spaceBetween={38} />
       </Box>
     </>
   );
