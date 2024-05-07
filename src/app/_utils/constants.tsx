@@ -1,6 +1,3 @@
-import { Stack } from '@mui/material';
-import { East } from '@mui/icons-material';
-
 import ImgCloud from 'public/images/header/product-menu/cloud.svg';
 import ImgSelfService from 'public/images/header/product-menu/self-service.svg';
 import ImgPulumi from 'public/images/header/product-menu/pulumi.svg';
@@ -12,11 +9,7 @@ import { IMenu } from './interfaces';
 export const productMainMenus: IMenu[] = [
   {
     icon: ImgCloud,
-    label: (
-      <Stack direction="row">
-        Code <East fontSize="small" /> Cloud
-      </Stack>
-    ),
+    label: `Code -> Cloud`,
     subLabel: 'Tools to Accelerate Delivery',
     href: '/code-to-cloud',
   },
