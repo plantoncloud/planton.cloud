@@ -7,7 +7,7 @@ import { StyledCloudNativeContainer } from '@/app/_components';
 
 export const DidYouKnowSection: FC = () => {
   return (
-    <Box className="container relative bg-black">
+    <Box className="container relative bg-black min-h-[1350px] md:min-h-[2000px]">
       <Box className="hidden absolute left-72 -top-20 md:block">
         <Image width={509} height={292} src="images/home/curv2.svg" alt="" />
         <Image

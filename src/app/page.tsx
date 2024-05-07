@@ -26,7 +26,9 @@ export default function Home() {
         <DidYouKnowSection />
         <AuditableSection />
       </Box>
-      <WantToSeePlatform />
+      <Box className="mt-10 md:mt-0">
+        <WantToSeePlatform />
+      </Box>
     </>
   );
 }

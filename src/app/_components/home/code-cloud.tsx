@@ -48,9 +48,9 @@ const DevOpsRealm: FC = () => {
       <Typography className="text-white text-xl font-extrabold leading-7">
         Ignite Developer Success With
       </Typography>
-      <Stack className="flex-row justify-center items-center gap-6 overflow-x-scroll w-[calc(100vw-10px)] md:w-auto">
-        {devOps.map((devOp) => (
-          <DevOpsChip {...devOp} />
+      <Stack className="flex-row justify-center items-center gap-6 overflow-x-auto w-[calc(100vw-10px)] md:w-auto">
+        {devOps.map((devOp, index) => (
+          <DevOpsChip {...devOp} key={index} />
         ))}
       </Stack>
     </Stack>
