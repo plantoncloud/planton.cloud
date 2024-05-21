@@ -21,13 +21,14 @@ const CodeCloudLabel: FC<TypographyProps> = (props) => {
 interface DevOpsChipProps {
   label: string;
   link: string;
+  className?: string;
 }
 
-const DevOpsChip: FC<DevOpsChipProps> = ({ label, link }) => {
+const DevOpsChip: FC<DevOpsChipProps> = ({ label, link, className }) => {
   return (
     <Link
       href={link}
-      className="px-6 py-4 bg-white bg-opacity-5 hover:bg-opacity-15 rounded-lg text-center text-white text-sm font-medium leading-tight inline-block whitespace-nowrap"
+      className={`px-6 py-4 bg-white bg-opacity-5 hover:bg-opacity-15 rounded-lg text-center text-white text-sm font-medium leading-tight inline-block whitespace-nowrap ${className}`}
     >
       {label}
     </Link>
@@ -50,7 +51,7 @@ const DevOpsRealm: FC = () => {
       </Typography>
       <Stack className="flex-row justify-center items-center gap-6 overflow-x-auto w-[calc(100vw-10px)] md:w-auto">
         {devOps.map((devOp, index) => (
-          <DevOpsChip {...devOp} key={index} />
+          <DevOpsChip {...devOp} key={index} className={ index === 0 ? 'ml-[400px] md:ml-0' : '' } />
         ))}
       </Stack>
     </Stack>
@@ -60,11 +61,11 @@ const DevOpsRealm: FC = () => {
 export const CodeCloudSection: FC = () => {
   return (
     <Stack className="mt-16 px-5 md:items-center md:mt-40">
-      <Box className="p-4 w-fit bg-primary-50 bg-opacity-5 rounded-xl border-2 border-neutral-800 border-opacity-50 backdrop-blur-3xl z-10">
+      <Box className="p-4 w-96 md:w-fit bg-primary-50 bg-opacity-5 rounded-xl border-2 border-neutral-800 border-opacity-50 backdrop-blur-3xl z-10 overflow-hidden">
         <DevOpsRealm />
       </Box>
       <Box className="w-full relative bg-gradient-to-b from-black via-black to-black h-[635px] md:h-[1270px]">
-        <Box className="w-full md:w-9/12 absolute left-4 md:left-56">
+        <Box className="w-11/12 md:w-9/12 absolute left-4 md:left-56">
           <Box className="w-0.5 h-96 top-[-155px] absolute bg-gradient-to-b from-white via-orange-200 to-black rounded" />
           <Box className="w-0.5 h-96 top-[-180px] absolute bg-gradient-to-b from-black via-orange-200 to-black rounded" />
           <Box className="w-0.5 h-96 top-[600px] absolute origin-top -rotate-180 bg-gradient-to-b from-black via-orange-200 to-black rounded z-10" />

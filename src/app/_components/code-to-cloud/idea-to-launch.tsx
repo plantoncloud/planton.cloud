@@ -27,10 +27,10 @@ export const IdeaToLaunch: FC = () => {
       </Box>
       <Box className="max-w-7xl mx-auto mt-40 z-10">
         <Grid container columns={12} spacing={8}>
-          <Grid item xs={6} className="flex">
+          <Grid item sm={12} md={6} className="flex">
             <Stack className="justify-between items-start px-[29px] py-[43px] bg-gradient-to-br from-indigo-700 to-violet-500 rounded-[19px] h-[412px] w-[575px] absolute overflow-hidden">
               <Box className="w-[547px] h-[565px] origin-bottom-right rotate-[20deg] bg-gradient-to-b from-emerald-500 from-30% via-violet-500 via-60% to-transparent to-85% rounded-full left-[275px] blur-[2px] opacity-60 absolute" />
-              <Typography className="text-white text-[51px] font-black leading-[56px] z-10">
+              <Typography className="text-white text-2xl md:text-5xl font-black leading-[56px] z-10">
                 From idea to launch, automate with
                 <br /> Code{'->'} Cloud.
               </Typography>

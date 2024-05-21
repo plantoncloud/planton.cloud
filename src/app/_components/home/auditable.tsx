@@ -11,7 +11,7 @@ interface AuditableDiscoverBoxProps {
 const AuditableDiscoverBox: FC<AuditableDiscoverBoxProps> = ({ children }) => {
   return (
     <Box
-      className="min-w-[455px] max-w-[555px] relative bg-stone-900 bg-opacity-70 rounded-xl border-2 border-neutral-800
+      className="w-full md:w-1/2 max-w-[555px] relative bg-stone-900 bg-opacity-70 rounded-xl border-2 border-neutral-800
       border-opacity-50 backdrop-blur-3xl overflow-hidden"
     >
       {children}

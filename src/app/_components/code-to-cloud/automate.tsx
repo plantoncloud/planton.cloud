@@ -44,12 +44,12 @@ export const Automate: FC = () => {
           }}
         />
       </Box>
-      <Stack className="mx-auto items-center gap-8">
+      <Stack className="mx-5 md:mx-auto items-center gap-8">
         <Box className="z-10">
           <ChipIacWorkflow>Introducing Integrated IaC Workflows</ChipIacWorkflow>
         </Box>
         <Stack className="self-stretch items-center gap-10 relative">
-          <Typography className="w-5/12 text-center text-white text-5xl font-extrabold leading-snug z-10">
+          <Typography className="w-full md:w-5/12 text-center text-white text-3xl md:text-5xl font-extrabold leading-snug z-10">
             Automate your workflow <br /> from idea to production with Code{'->'} Cloud
           </Typography>
           <RoundBtn
@@ -68,11 +68,11 @@ export const Automate: FC = () => {
           alt=""
           width={0}
           height={0}
-          className="w-6/12 mt-10 z-10"
+          className="w-fit md:w-6/12 mt-10 z-10"
         />
 
         <Box className="w-[150vh] h-[150vh] bg-gradient-to-br from-indigo-950 from-65% via-indigo-800 to-transparent to-70% top-[650px] rotate-45 rounded-[200px] blur-3xl absolute" />
-        <Typography className="text-center text-white text-sm font-medium leading-6 mt-20 z-10">
+        <Typography className="text-center text-white text-sm font-medium leading-6 mt-20 z-20">
           Poised to Serve World-Class Organizations Like
         </Typography>
       </Stack>
