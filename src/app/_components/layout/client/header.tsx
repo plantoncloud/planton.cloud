@@ -81,7 +81,7 @@ function HeaderMobile() {
     <>
       <Stack
         ref={anchorRef}
-        className="flex-row p-2.5 bg-black bg-opacity-10 border-b border-neutral-800 backdrop-blur-md justify-between items-center"
+        className="flex-row p-2.5 bg-black bg-opacity-10 border-b border-neutral-800 backdrop-blur-md justify-between items-center relative z-10"
       >
         <Link href="/">
           <Image src="/images/header-logo.svg" width={24} height={24} alt="Logo" />

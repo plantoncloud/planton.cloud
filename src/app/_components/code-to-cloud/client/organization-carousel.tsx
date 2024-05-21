@@ -4,6 +4,7 @@ import React, { FC } from 'react';
 import Image from 'next/image';
 import { Autoplay, FreeMode, Virtual } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { SwiperOptions } from 'swiper/types';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/free-mode';
@@ -22,6 +23,10 @@ interface IOrganizationCarousel {
   slidesPerView?: number;
   direction?: 'horizontal' | 'vertical';
   spaceBetween?: number | string;
+  breakpoints?: {
+    [width: number]: SwiperOptions;
+    [ratio: string]: SwiperOptions;
+  };
 }
 export const OrganizationCarousel: FC<IOrganizationCarousel> = ({
   speed = 5000,
@@ -29,6 +34,7 @@ export const OrganizationCarousel: FC<IOrganizationCarousel> = ({
   slidesPerView = 3,
   direction = 'horizontal',
   spaceBetween,
+  breakpoints,
 }) => {
   return (
     <Swiper
@@ -45,6 +51,7 @@ export const OrganizationCarousel: FC<IOrganizationCarousel> = ({
         disableOnInteraction: false,
       }}
       wrapperClass="flex items-center"
+      breakpoints={breakpoints}
     >
       {[...OrgImages, ...OrgImages].map((src, index) => (
         <SwiperSlide key={index}>

@@ -20,7 +20,7 @@ export const ChipIacWorkflow: FC<TypographyProps> = (props) => {
           <Stack className="justify-center items-center gap-3 flex-row">
             <Typography
               {...props}
-              className={`text-white text-sm md:text-base font-normal ${props?.className || ''}`}
+              className={`text-white text-xs md:text-base font-normal ${props?.className || ''}`}
             >
               {props.children}
             </Typography>
