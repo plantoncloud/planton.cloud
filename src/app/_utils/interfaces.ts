@@ -6,3 +6,12 @@ export interface IMenu {
   subLabel?: string;
   href?: string;
 }
+
+export interface IPlan {
+  imgSrc: string;
+  name: string;
+  price: string;
+  period: string;
+  features: string[];
+  isPopular?: boolean;
+}

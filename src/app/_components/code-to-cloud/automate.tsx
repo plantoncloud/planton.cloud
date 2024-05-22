@@ -34,7 +34,7 @@ const SquareRadient: FC<SquareRadientProps> = ({ parentBoxProps, childBoxProps }
 
 export const Automate: FC = () => {
   return (
-    <Box className="pb-24 md:pb-36">
+    <Box className="pb-12 md:pb-36">
       <Box className="relative">
         <SquareRadient
           parentBoxProps={{
