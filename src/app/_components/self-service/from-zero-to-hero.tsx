@@ -5,11 +5,11 @@ import { Box, Stack, Typography } from '@mui/material';
 export const FromZeroToHero: FC = () => {
   return (
     <Stack className="justify-center items-center flex-row relative bg-gray-95 0 bg-blend-overlay">
-      <Box className="w-screen h-48 bg-black bg-opacity-70 absolute z-10 top-10 blur-xl" />
-      <Box className="w-[700px] h-[600px] rotate-45 bg-fuchsia-950 bg-opacity-60 blur-3xl rounded-full absolute z-0 top-[300px] left-44" />
-      <Stack className="w-8/12 justify-start z-10">
+      <Box className="hidden md:block w-screen h-48 bg-black bg-opacity-70 absolute z-10 top-10 blur-xl" />
+      <Box className="w-[700px] h-[600px] bg-fuchsia-950 bg-opacity-60 blur-3xl rounded-full absolute z-0 top-[300px] left-44" />
+      <Stack className="w-11/12 md:w-8/12 justify-start z-10">
         <Stack className="justify-start items-center gap-3 mb-4">
-          <Typography className="text-center text-white text-4xl font-extrabold z-10">
+          <Typography className="text-center text-white text-xl md:text-4xl font-extrabold z-10">
             From Zero to Kubernetes Hero
           </Typography>
           <Typography className="text-center text-white text-opacity-50 text-2xl font-semibold">
