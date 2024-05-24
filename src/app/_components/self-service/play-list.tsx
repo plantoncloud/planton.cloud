@@ -25,7 +25,7 @@ const playLists: PlayListBoxProps[] = [
 
 export const PlayList: FC = () => {
   return (
-    <Stack className="justify-start items-start gap-28 pt-16 pb-32">
+    <Stack className="justify-start items-start gap-14 md:gap-28 px-6 pt-8 md:pt-16 pb-16 md:pb-32">
       {playLists.map((item) => (
         <PlayListBox {...item} key={item.title} />
       ))}

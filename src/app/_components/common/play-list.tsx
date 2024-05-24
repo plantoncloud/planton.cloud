@@ -11,16 +11,18 @@ export interface PlayListBoxProps {
 export const PlayListBox: FC<PlayListBoxProps> = ({ title, subTitle, src, isReverse }) => {
   return (
     <Stack
-      className={`w-full justify-center items-center gap-16 ${
-        isReverse ? 'flex-row-reverse' : 'flex-row'
+      className={`w-full justify-center items-center gap-6 md:gap-16 ${
+        isReverse ? 'md:flex-row-reverse' : 'md:flex-row'
       }`}
     >
-      <Box className="w-5/12 aspect-video">
+      <Box className="w-full md:w-5/12 aspect-video">
         <iframe src={src} allowFullScreen className="w-full h-full rounded-3xl" />
       </Box>
-      <Stack className="justify-start items-start gap-5 max-w-lg">
-        <Typography className="text-white text-4xl font-extrabold ">{title}</Typography>
-        <Typography className="text-white text-xl font-medium ">{subTitle}</Typography>
+      <Stack className="justify-start items-start gap-3 md:gap-5 max-w-lg">
+        <Typography className="text-white text-2xl md:text-4xl font-extrabold ">{title}</Typography>
+        <Typography className="text-white text-base font-semibold md:text-xl md:font-medium ">
+          {subTitle}
+        </Typography>
       </Stack>
     </Stack>
   );
