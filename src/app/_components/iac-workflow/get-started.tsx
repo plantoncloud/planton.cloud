@@ -17,21 +17,21 @@ export const GetStarted: FC = () => {
     { width: 400, top: '-20%', left: '5%' },
     { width: 200, top: '20%', left: '-5%' },
     { width: 250, top: '65%', left: '40%' },
-    { width: 150, top: '75%', left: '4%' }
+    { width: 150, top: '75%', left: '4%' },
   ];
 
   return (
-    <Stack className="h-[calc(100vh-150px)] justify-center items-center flex-row relative">
-      <Box className="absolute w-full h-screen">
+    <Stack className="h-[calc(50vh-100px)] md:h-[calc(100vh-150px)] px-6 md:px-0 justify-center md:items-center flex-row relative">
+      <Box className="absolute w-full h-[50vh] md:h-screen">
         <StyledLayoutContainer className="absolute w-full h-full" />
         <Box className="w-screen h-24 bg-black bg-opacity-70 z-0 absolute -bottom-10 blur-xl" />
         {rockets.map(({ width, top, left }, idx) => (
-          <RocketComponent key={idx} width={width} top={top} left={left}></RocketComponent>
+          <RocketComponent key={idx} width={width} top={top} left={left} />
         ))}
       </Box>
-      <Stack className="w-9/12 justify-start items-center gap-6 z-10">
+      <Stack className="md:w-9/12 mt-4 md:mt-0 justify-start items-center gap-6 z-10">
         <ChipIacWorkflow>Introducing Integrated IaC Workflows</ChipIacWorkflow>
-        <Typography className="w-11/12 text-center text-white text-6xl font-black leading-[70px]">
+        <Typography className="text-center text-white text-3xl font-extrabold md:text-6xl md:font-black !leading-snug">
           Up to 4x faster <br />
           pipeline execution
         </Typography>

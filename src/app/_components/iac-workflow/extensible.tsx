@@ -63,12 +63,12 @@ const cardContents: IacCardProps[] = [
 
 const IacCard: FC<IacCardProps> = ({ imgSrc, heading, subHeading, title, content }) => {
   return (
-    <Card className=" bg-zinc-600 bg-opacity-20 rounded-xl">
-      <CardContent className="p-8">
+    <Card className="h-full bg-zinc-600 bg-opacity-20 rounded-xl">
+      <CardContent className="p-4 md:p-8">
         <Stack className="justify-start items-start gap-1.5">
           <Stack className="justify-center items-start gap-3">
             <Image alt="" width={0} height={0} className="w-16 h-16" src={imgSrc} />
-            <Typography className="text-center text-white text-5xl font-black leading-[72px]">
+            <Typography className="text-center text-white text-3xl md:text-5xl font-black ">
               {heading}
             </Typography>
             <Typography className="text-neutral-500 text-sm font-bold leading-[21px]">
@@ -77,7 +77,7 @@ const IacCard: FC<IacCardProps> = ({ imgSrc, heading, subHeading, title, content
           </Stack>
           <Stack className="justify-start items-start gap-1.5">
             <Typography className="text-white text-2xl font-semibold leading-9">{title}</Typography>
-            <Typography className="text-white text-[15px] font-medium leading-snug">
+            <Typography className="text-white text-sm md:text-base font-medium leading-snug">
               {content}
             </Typography>
           </Stack>
@@ -89,9 +89,9 @@ const IacCard: FC<IacCardProps> = ({ imgSrc, heading, subHeading, title, content
 
 export const Extensible: FC = () => {
   return (
-    <Box className="max-w-screen-xl mx-auto relative">
+    <Box className="max-w-screen-xl mx-auto px-6 md:px-0 relative">
       <Box className="absolute top-[75px] -left-24 w-full">
-        <Box className="relative w-full">
+        <Box className="hidden md:block relative w-full">
           <Image
             alt=""
             width={0}
@@ -106,11 +106,11 @@ export const Extensible: FC = () => {
           <Box className="w-[4px] h-56 top-[1355px] right-0 absolute  transform origin-top-left shadow-md  rounded-tr-full bg-purple-600 bg-gradient-to-b from-transparent  to-black" />
         </Box>
       </Box>
-      <Stack className="flex-row justify-start items-start gap-5">
-        <Typography className="w-9/12 text-white text-3xl font-bold leading-[48px] z-10">
+      <Stack className="md:flex-row justify-start items-start gap-4 md:gap-5">
+        <Typography className="md:w-9/12 text-white text-xl md:text-3xl font-bold !leading-snug z-10">
           Extensible Infrastructure as Code (IaC) Workflows
         </Typography>
-        <Typography className="text-white text-2xl font-semibold leading-9 z-10">
+        <Typography className="text-white text-base md:text-2xl font-semibold z-10">
           Gain invaluable insights into your infrastructure&#39;s evolution with comprehensive
           access to historical operation logs. This feature simplifies error diagnosis, promotes
           learning from past executions, and supports continuous optimization of your infrastructure
@@ -119,22 +119,22 @@ export const Extensible: FC = () => {
       </Stack>
       <Grid container columns={12} spacing={4} mt={1}>
         {cardContents.map((card, index) => (
-          <Grid item xs={4} key={index}>
+          <Grid item xs={12} md={4} key={index}>
             <IacCard {...card} />
           </Grid>
         ))}
       </Grid>
       <Stack justifyContent="center" alignContent="center" direction="row">
-        <Stack className="w-9/12 mx-auto mt-80 gap-4">
+        <Stack className="md:w-9/12 md:mx-auto mt-10 md:mt-80 gap-4">
           <StyledBorderGradient
-            className="w-7/12 mx-auto p-2.5 bg-stone-900 bg-opacity-70 border-opacity-50 backdrop-blur-[70px] rounded-2xl
+            className="md:w-7/12 mx-auto p-2.5 bg-stone-900 bg-opacity-70 border-opacity-50 backdrop-blur-[70px] rounded-2xl
             shadow border-4 border-transparent"
           >
-            <Typography className="text-center text-white text-[32px] font-bold leading-[48px]">
+            <Typography className="text-center text-white text-xl font-semibold md:text-[32px] md:font-bold md:leading-[48px]">
               Historical Operations Insight for Enhanced Troubleshooting
             </Typography>
           </StyledBorderGradient>
-          <Typography className="text-center text-stone-500 text-2xl font-semibold  leading-9">
+          <Typography className="text-center text-stone-500 text-base md:text-2xl font-semibold leading-snug">
             Gain invaluable insights into your infrastructure&#39;s evolution with comprehensive
             access to historical operation logs.
           </Typography>

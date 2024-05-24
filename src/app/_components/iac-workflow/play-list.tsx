@@ -30,7 +30,7 @@ const playLists: PlayListBoxProps[] = [
 
 export const IacWorkFlowPlayList: FC = () => {
   return (
-    <Stack className="max-w-screen-2xl mx-auto justify-start items-start gap-28 mt-48 mb-32">
+    <Stack className="max-w-screen-2xl mx-auto justify-start items-start gap-14 md:gap-28 px-6 mt-8 md:mt-48 pb-16 md:pb-32">
       {playLists.map((item, index) => (
         <PlayListBox {...item} key={index} />
       ))}
