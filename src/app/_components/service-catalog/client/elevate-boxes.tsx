@@ -10,7 +10,7 @@ export const ElevateBoxes: FC = () => {
     <Grid container columns={{ xs: 6, md: 12 }}>
       {[...Array(mobile ? 30 : 72)].map((_, index) => (
         <Grid item key={index} xs={1} className="border-l md:border-r border-b border-neutral-700">
-          <Box className="pt-[100%]" />
+          <Box className="pt-[120%] md:pt-[100%]" />
         </Grid>
       ))}
     </Grid>

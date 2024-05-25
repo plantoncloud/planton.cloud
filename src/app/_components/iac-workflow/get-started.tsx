@@ -30,7 +30,7 @@ export const GetStarted: FC = () => {
         ))}
       </Box>
       <Stack className="md:w-9/12 mt-4 md:mt-0 justify-start items-center gap-6 z-10">
-        <ChipIacWorkflow>Introducing Integrated IaC Workflows</ChipIacWorkflow>
+        <ChipIacWorkflow labelProps={{ children: 'Introducing Integrated IaC Workflows' }} />
         <Typography className="text-center text-white text-3xl font-extrabold md:text-6xl md:font-black !leading-snug">
           Up to 4x faster <br />
           pipeline execution
