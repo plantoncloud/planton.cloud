@@ -45,7 +45,7 @@ export const Automate: FC = () => {
       </Box>
       <Stack className="mx-5 md:mx-auto items-center gap-6 md:gap-8">
         <Box className="z-10">
-          <ChipIacWorkflow>Introducing Integrated IaC Workflows</ChipIacWorkflow>
+          <ChipIacWorkflow labelProps={{ children: 'Introducing Integrated IaC Workflows' }} />
         </Box>
         <Stack className="self-stretch items-center gap-5 md:gap-10 relative">
           <Typography className="w-full md:w-10/12 lg:w-8/12 xl:w-4/12 text-center text-white text-[28px] !leading-snug md:text-5xl font-extrabold z-10">

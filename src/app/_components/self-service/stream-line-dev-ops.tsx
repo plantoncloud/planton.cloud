@@ -8,7 +8,9 @@ export const StreamLineDevOps: FC = () => {
     <>
       <StyledStreamLineContainer className="w-full h-[calc(50vh+60px)] md:h-screen absolute z-10 bg-cover bg-center" />
       <Stack className="md:hidden relative z-20 items-center pt-6">
-        <ChipIacWorkflow className="z-20">Introducing Integrated IaC Workflows</ChipIacWorkflow>
+        <ChipIacWorkflow
+          labelProps={{ className: 'z-20', children: 'Introducing Integrated IaC Workflows' }}
+        />
       </Stack>
       <Stack className="h-[50vh] md:h-screen justify-center items-center flex-row">
         <Box className="relative z-10">

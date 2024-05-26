@@ -49,7 +49,7 @@ export const InternalDeveloperSection: FC = () => {
       <StyledLayoutContainer className="w-full h-[796px] absolute z-0 bg-cover" />
       <Stack className="gap-5 pt-10 px-5 md:gap-16 md:px-0 md:ml-[15%] md:pt-48">
         <Stack className="gap-7 z-10">
-          <ChipIacWorkflow>Introducing Integrated IaC Workflows</ChipIacWorkflow>
+          <ChipIacWorkflow labelProps={{ children: 'Introducing Integrated IaC Workflows' }} />
           <Stack className="justify-start items-start gap-3">
             <Stack className="justify-start items-start">
               <Typography className="text-white text-base font-extrabold leading-normal">

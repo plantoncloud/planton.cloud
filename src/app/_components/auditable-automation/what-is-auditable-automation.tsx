@@ -4,7 +4,7 @@ import { Grid, Stack, Typography, TypographyProps } from '@mui/material';
 export const ChipLabel: FC<TypographyProps> = (props) => {
   return (
     <Typography
-      className={`px-6 py-2.5 bg-zinc-800 rounded-3xl text-center text-white text-base font-medium leading-snug ${props.className}`}
+      className={`px-6 py-2.5 bg-zinc-800 rounded-3xl text-center text-white text-sm md:text-base font-medium leading-snug ${props.className}`}
     >
       {props.children}
     </Typography>
