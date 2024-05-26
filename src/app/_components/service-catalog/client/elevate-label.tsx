@@ -21,7 +21,7 @@ export const ElevateAnimLabel: FC<TypographyProps> = (props) => {
   return (
     <Typography
       sx={{ direction: 'rtl' }}
-      className={`${classes.growingBar} px-8 py-9 bg-white rounded-[32px] text-zinc-800 text-4xl font-bold whitespace-nowrap overflow-hidden ${props.className}`}
+      className={`${classes.growingBar} p-2 md:px-8 md:py-6 bg-white rounded-xl md:rounded-[32px] text-zinc-800 text-xs md:text-4xl font-bold whitespace-nowrap overflow-hidden ${props.className}`}
     >
       {props.children}
     </Typography>

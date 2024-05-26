@@ -14,7 +14,7 @@ const playLists: PlayListBoxProps[] = [
     subTitle:
       'Deploy Open-Source Software Easily: Redis, Kafka, Solr, Postgres and more... on Kubernetes.',
     src: 'https://www.loom.com/embed/00c6678bcb2c42d4ab78cc6a42d057aa?sid=422baba7-dec0-4483-afd5-d874cd7f1d1a?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true',
-    isReverse: true,
+    reverse: { desktop: true },
   },
   {
     title: 'Cloud Control, Simplified',
@@ -25,7 +25,7 @@ const playLists: PlayListBoxProps[] = [
 
 export const PlayList: FC = () => {
   return (
-    <Stack className="justify-start items-start gap-28 pt-16 pb-32">
+    <Stack className="justify-start items-start gap-14 md:gap-28 px-6 pt-8 md:pt-16 pb-16 md:pb-32">
       {playLists.map((item) => (
         <PlayListBox {...item} key={item.title} />
       ))}
