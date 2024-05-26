@@ -4,3 +4,6 @@ export * from './chip';
 export * from './footer-banner';
 export * from './play-list';
 export * from './want-to-see-platform';
+export * from './features';
+export * from './plan';
+export * from './plus-sticky-icon';

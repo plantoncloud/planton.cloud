@@ -1,28 +1,36 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import { Stack, Typography, TypographyProps } from '@mui/material';
+import { BoxProps, Stack, Typography, TypographyProps } from '@mui/material';
 import { East } from '@mui/icons-material';
 import { Chip } from './chip';
 import Link from 'next/link';
 
-export const ChipIacWorkflow: FC<TypographyProps> = (props) => {
+interface IChipIacWorkflow {
+  chipProps?: BoxProps;
+  labelProps?: TypographyProps;
+  iconclassName?: string;
+}
+
+export const ChipIacWorkflow: FC<IChipIacWorkflow> = ({ labelProps, chipProps, iconclassName }) => {
   return (
     <Link href="/iac-workflow">
-      <Chip>
+      <Chip {...chipProps}>
         <Stack className="flex-row gap-1 justify-center items-center">
           <Image
-            width={28}
-            height={28}
+            width={0}
+            height={0}
             alt="Cloud Server"
-            className="bg-transparent"
+            className={`${iconclassName} bg-transparent`}
             src="images/home/cloud-server.svg"
           />
           <Stack className="justify-center items-center gap-3 flex-row">
             <Typography
-              {...props}
-              className={`text-white text-base font-normal ${props.className}`}
+              {...labelProps}
+              className={`text-white text-xs md:text-base font-normal ${
+                labelProps?.className || ''
+              }`}
             >
-              {props.children}
+              {labelProps.children}
             </Typography>
             <East />
           </Stack>

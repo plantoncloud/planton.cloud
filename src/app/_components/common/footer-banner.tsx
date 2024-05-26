@@ -31,9 +31,15 @@ export const GRADIENT_COLOR_MAPS = {
     'linear-gradient(119.46deg, #16110D -42.62%, #5B3214 25.58%, #2C2926 99.88%)',
 };
 
-export const FooterBanner: FC<FooterBannerProps> = ({ background, title, subTitle, actions, varient }) => {
+export const FooterBanner: FC<FooterBannerProps> = ({
+  background,
+  title,
+  subTitle,
+  actions,
+  varient,
+}) => {
   if (!varient) {
-    return <Box className="py-8 z-20" sx={{ background }}>
+    return <Box className="px-5 py-8 z-20 md:px-0" sx={{ background }}>
       <Box className="container">
         <Stack className="justify-start items-start gap-3">
           {title && <Typography className="text-white text-2xl font-semibold ">{title}</Typography>}
@@ -55,9 +61,9 @@ export const FooterBanner: FC<FooterBannerProps> = ({ background, title, subTitl
   }
 
   return (
-    <Grid className="w-full bg-black border border-zinc-800 mt-32">
+    <Grid className="w-full px-6 py-9  border border-zinc-800 md:mt-32" sx={{ background }}>
       <Grid item xs={8}>
-        <Stack className="pl-6 py-9 self-stretch justify-center items-start gap-2.5" sx={{ background }}>
+        <Stack className="self-stretch justify-center items-start gap-2.5">
           <MediumLabel>
             Trial Plantoncloud Enterprise to see our customizable platform, security, and <br />
             performance in action.

@@ -1,6 +1,5 @@
 'use client';
 import { FC, SyntheticEvent, useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 import {
@@ -22,27 +21,27 @@ import { productMainMenus, rightMenus } from '@/app/_utils/constants';
 const StyledLeftItemContainer = styled(Stack)(({ theme }) => ({
   '&:hover': {
     '*': {
-      color: `${theme.palette.primary.main} !important`,
+      [theme.breakpoints.up(768)]: {
+        color: `${theme.palette.primary.main} !important`,
+      },
     },
   },
 }));
 
-const LeftMenuItemBox: FC<IMenu> = ({ label, subLabel, icon: Icon, href }) => {
-  const { push } = useRouter();
-  const handleMenuItemClick = (href: string) => {
-    push(href);
-  };
+export const ProductMenuItem: FC<IMenu> = ({ label, subLabel, icon: Icon, href }) => {
   return (
-    <StyledLeftItemContainer
-      className="w-full pl-3 pr-2.5 pt-3 pb-5 gap-1 hover:bg-zinc-900  hover:first:rounded-t-xl hover:last:rounded-b-xl  border-b last:border-b-0 border-zinc-900 backdrop-blur-md justify-center items-start cursor-pointer"
-      onClick={() => handleMenuItemClick(href)}
+    <Link
+      href={href ?? ''}
+      className="w-full pl-3 pr-2.5 pt-3 pb-5 backdrop-blur-md md:hover:bg-zinc-900  md:hover:first:rounded-t-xl md:hover:last:rounded-b-xl md:border-b md:last:border-b-0 md:border-zinc-900 "
     >
-      <Stack className="justify-start items-center gap-1.5 flex-row">
-        <SvgIcon component={Icon} htmlColor="white" />
-        <Typography className="text-neutral-50 text-sm font-semibold ">{label}</Typography>
-      </Stack>
-      <Typography className="text-zinc-500 text-xs font-normal ">{subLabel}</Typography>
-    </StyledLeftItemContainer>
+      <StyledLeftItemContainer className="gap-1 justify-center items-start">
+        <Stack className="justify-start items-center gap-1.5 flex-row">
+          <SvgIcon component={Icon} htmlColor="white" />
+          <Typography className="text-neutral-50 text-sm font-semibold ">{label}</Typography>
+        </Stack>
+        <Typography className="text-zinc-500 text-xs font-normal ">{subLabel}</Typography>
+      </StyledLeftItemContainer>
+    </Link>
   );
 };
 
@@ -117,7 +116,7 @@ export const ProductMenu: FC = () => {
                 >
                   <Stack className="justify-start items-start gap-1">
                     {productMainMenus.map((menuItem, index) => (
-                      <LeftMenuItemBox
+                      <ProductMenuItem
                         key={index}
                         icon={menuItem.icon}
                         label={menuItem.label}

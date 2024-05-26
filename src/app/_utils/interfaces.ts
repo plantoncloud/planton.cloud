@@ -1,8 +1,17 @@
-import { FC, ReactNode } from "react";
+import { FC } from 'react';
 
 export interface IMenu {
   icon?: FC;
-  label: string | ReactNode;
-  subLabel?: string | ReactNode;
+  label: string;
+  subLabel?: string;
   href?: string;
+}
+
+export interface IPlan {
+  imgSrc: string;
+  name: string;
+  price: string;
+  period: string;
+  features: string[];
+  isPopular?: boolean;
 }

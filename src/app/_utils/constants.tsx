@@ -1,22 +1,15 @@
-import { Stack } from '@mui/material';
-import { East } from '@mui/icons-material';
-
 import ImgCloud from 'public/images/header/product-menu/cloud.svg';
 import ImgSelfService from 'public/images/header/product-menu/self-service.svg';
 import ImgPulumi from 'public/images/header/product-menu/pulumi.svg';
 import ImgResourceCatalog from 'public/images/header/product-menu/resource-catalog.svg';
 import ImgAuditManagement from 'public/images/header/product-menu/audit-management.svg';
 
-import { IMenu } from './interfaces';
+import { IMenu, IPlan } from './interfaces';
 
 export const productMainMenus: IMenu[] = [
   {
     icon: ImgCloud,
-    label: (
-      <Stack direction="row">
-        Code <East fontSize="small" /> Cloud
-      </Stack>
-    ),
+    label: `Code -> Cloud`,
     subLabel: 'Tools to Accelerate Delivery',
     href: '/code-to-cloud',
   },
@@ -93,3 +86,45 @@ export const rightMenus: IMenu[] = [
 
 export const REQUEST_DEMO_URL =
   'https://docs.google.com/forms/d/1OcFNXUzmh1ntC4JE1zekWhWPiYm6AyierLNp7vdGjMg';
+
+export const plans: IPlan[] = [
+  {
+    imgSrc: '/images/code-to-cloud/plane.svg',
+    name: 'LITE',
+    price: '$29',
+    period: 'per month',
+    features: [
+      'Unlimited Environments',
+      'More Functions (Serverless, Edge)',
+      'More Databases (KV, Postgres)',
+    ],
+  },
+  {
+    imgSrc: '/images/code-to-cloud/plane2.svg',
+    name: 'STANDARD',
+    price: '$89',
+    period: 'per month',
+    features: [
+      'Unlimited Environments',
+      'More Functions (Serverless, Edge)',
+      'More Databases (KV, Postgres)',
+      'More Web Analytics Events',
+      'More Experimentation (Edge Config, Middleware)',
+    ],
+    isPopular: true,
+  },
+  {
+    imgSrc: '/images/code-to-cloud/rocket.svg',
+    name: 'ENTERPRISE',
+    price: '$159',
+    period: 'per month',
+    features: [
+      'Unlimited Environments',
+      'More Functions (Serverless, Edge)',
+      'More Databases (KV, Postgres)',
+      'More Databases (KV, Postgres)',
+      'More Databases (KV, Postgres)',
+      'More Databases (KV, Postgres)',
+    ],
+  },
+];

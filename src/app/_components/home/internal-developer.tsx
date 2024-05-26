@@ -4,7 +4,12 @@ import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 import { East, Email } from '@mui/icons-material';
-import { RolesComponent, StyledLayoutContainer, ChipIacWorkflow } from '@/app/_components';
+import {
+  RolesComponent,
+  StyledLayoutContainer,
+  ChipIacWorkflow,
+  OrganizationCarousel,
+} from '@/app/_components';
 
 interface OrgLogoProps {
   width: number | `${number}` | undefined;
@@ -42,32 +47,29 @@ export const InternalDeveloperSection: FC = () => {
   return (
     <>
       <StyledLayoutContainer className="w-full h-[796px] absolute z-0 bg-cover" />
-      <Stack className="pl-64 pt-28 gap-14">
+      <Stack className="gap-5 pt-10 px-5 md:gap-16 md:px-0 md:ml-[15%] md:pt-48">
         <Stack className="gap-7 z-10">
-          <ChipIacWorkflow>Introducing Integrated IaC Workflows</ChipIacWorkflow>
-
+          <ChipIacWorkflow labelProps={{ children: 'Introducing Integrated IaC Workflows' }} />
           <Stack className="justify-start items-start gap-3">
-            <Stack className="flex-col justify-start items-start">
+            <Stack className="justify-start items-start">
               <Typography className="text-white text-base font-extrabold leading-normal">
                 CloudNative
               </Typography>
-              <Stack className="flex-col justify-start items-start gap-2.5">
-                <Stack className="flex-row justify-start items-center gap-2">
-                  <Typography
-                    variant="caption"
-                    className="text-white text-4xl font-extrabold leading-10"
-                  >
-                    Internal Developer
-                  </Typography>
-                  <RolesComponent />
-                </Stack>
+              <Stack className="gap-2 md:flex-row">
+                <Typography
+                  variant="caption"
+                  className="text-white text-4xl font-extrabold leading-10"
+                >
+                  Internal Developer
+                </Typography>
+                <RolesComponent />
               </Stack>
             </Stack>
-            <Stack className="p-3 bg-neutral-800 rounded-lg gap-3.5">
+            <Stack className="w-full p-3 bg-neutral-800 rounded-lg gap-3.5 md:w-auto">
               <Typography className="text-white text-base font-medium leading-snug ">
                 Hop on board, its free!
               </Typography>
-              <Stack className="justify-start items-center gap-3 flex-row ">
+              <Stack className="justify-start gap-3 md:flex-row md:items-center">
                 <Stack className="flex-row items-center bg-black rounded-lg border border-zinc-800 p-2.5">
                   <Email />
                   <Box className="w-5 h-px rotate-90 border border-zinc-600"></Box>
@@ -82,7 +84,7 @@ export const InternalDeveloperSection: FC = () => {
                 <Button
                   endIcon={<East />}
                   variant="contained"
-                  className="bg-primary-50 p-[10px] rounded-full text-white text-xs font-medium  px-4"
+                  className="bg-primary-50 p-[10px] rounded-full text-white text-xs font-medium px-4"
                 >
                   Get Started
                 </Button>
@@ -94,8 +96,13 @@ export const InternalDeveloperSection: FC = () => {
           <Typography className="text-center text-white text-sm font-medium leading-tight">
             Poised to Serve World-Class Organizations Like
           </Typography>
-          <OrgList />
+          <Box className="hidden md:block">
+            <OrgList />
+          </Box>
         </Stack>
+        <Box className="md:hidden">
+          <OrganizationCarousel spaceBetween={50} />
+        </Box>
       </Stack>
     </>
   );

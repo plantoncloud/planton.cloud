@@ -1,14 +1,13 @@
 'use client';
 
-import { FC, ReactNode, useMemo } from 'react';
+import { FC, ReactNode, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
 
-import { OpenInNew } from '@mui/icons-material';
-import { Box, Button, Stack, Tab, Tabs, Typography } from '@mui/material';
+import { ArrowDropUp, Close, DensityMedium, OpenInNew } from '@mui/icons-material';
+import { Box, Button, Fade, Popper, Stack, Typography, TypographyProps } from '@mui/material';
 
-import { ProductMenu } from '@/app/_components';
+import { Features, ProductMenu, ProductMenuItem, RoundBtn } from '@/app/_components';
 import { productMainMenus } from '@/app/_utils/constants';
 
 interface MenuSectionProps {
@@ -23,49 +22,11 @@ const HeaderLogo = () => {
   );
 };
 
-const SecondaryMenu: FC = () => {
-  const pathname = usePathname();
-  const { push } = useRouter();
-
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    push(newValue);
-  };
-
-  return (
-    <>
-      <Stack className="w-full mt-16 px-4 py-6 bg-neutral-900 shadow border-b border-zinc-800 flex-row justify-center items-center gap-8 z-10 relative">
-        <Typography className="text-neutral-50 text-2xl font-semibold ">Features</Typography>
-        <Tabs
-          classes={{ flexContainer: 'flex-row justify-start items-start gap-3' }}
-          value={pathname}
-          onChange={handleChange}
-        >
-          {productMainMenus.map((menuItem, index) => (
-            <Tab
-              classes={{ root: 'px-3 py-2.5 text-white text-sm font-medium' }}
-              key={index}
-              value={menuItem.href}
-              label={menuItem.label}
-            />
-          ))}
-        </Tabs>
-      </Stack>
-    </>
-  );
-};
-
 const MenuSection: FC<MenuSectionProps> = ({ children }) => {
   return <Stack className="flex-row items-center gap-4 text-sm">{children}</Stack>;
 };
 
-export default function Header() {
-  const pathname = usePathname();
-
-  const showSecondaryMenu = useMemo(
-    () => productMainMenus.map((menu) => menu.href).includes(pathname),
-    [pathname]
-  );
-
+function HeaderComputer() {
   return (
     <Box>
       <Stack className="w-full fixed top-0 left-0 z-20 flex-row justify-between items-center p-[6px] border-b border-b-gray-800 bg-gray-900 bg-opacity-0 backdrop-blur-sm">
@@ -89,7 +50,120 @@ export default function Header() {
           </Link>
         </MenuSection>
       </Stack>
-      {showSecondaryMenu && <SecondaryMenu />}
+    </Box>
+  );
+}
+
+const MenuLabel: FC<TypographyProps> = (props) => {
+  return (
+    <Typography
+      {...props}
+      className={`${props.className}  text-white text-sm font-medium cursor-pointer`}
+    >
+      {props.children}
+    </Typography>
+  );
+};
+
+function HeaderMobile() {
+  const anchorRef = useRef(null);
+  const [openMenu, setOpenMenu] = useState(false);
+  const [openProductMenu, setOpenProductMenu] = useState(false);
+
+  const handleClick = () => {
+    setOpenMenu((previousOpen) => !previousOpen);
+  };
+
+  const canBeOpen = openMenu && Boolean(anchorRef.current);
+  const id = canBeOpen ? 'transition-popper' : undefined;
+
+  return (
+    <>
+      <Stack
+        ref={anchorRef}
+        className="flex-row p-2.5 bg-black bg-opacity-10 border-b border-neutral-800 backdrop-blur-md justify-between items-center relative z-10"
+      >
+        <Link href="/">
+          <Image src="/images/header-logo.svg" width={24} height={24} alt="Logo" />
+        </Link>
+        <Stack
+          aria-describedby={id}
+          onClick={handleClick}
+          className="w-8 h-8 items-center justify-center bg-black bg-opacity-10 rounded-[28px] border border-neutral-800 backdrop-blur-md cursor-pointer"
+        >
+          {openMenu ? <Close fontSize="small" /> : <DensityMedium fontSize="small" />}
+        </Stack>
+      </Stack>
+
+      <Popper
+        id={id}
+        open={openMenu}
+        anchorEl={anchorRef.current}
+        transition
+        placement="bottom"
+        className="z-20 w-full"
+      >
+        {({ TransitionProps }) => (
+          <Fade {...TransitionProps} timeout={350}>
+            <Stack className="px-1.5 py-6 bg-black bg-opacity-20 backdrop-blur-xl gap-3">
+              <RoundBtn variant="contained" className="bg-primary-50 w-full">
+                Sign In
+              </RoundBtn>
+              <RoundBtn variant="contained" className="bg-zinc-900 bg-opacity-90 w-full">
+                Sign Up
+              </RoundBtn>
+              <Box className="px-4 pb-2.5 pt-5">
+                <Stack
+                  className="items-center justify-between flex-row  cursor-pointer"
+                  onClick={() => setOpenProductMenu(!openProductMenu)}
+                >
+                  <MenuLabel>Products</MenuLabel>
+                  <ArrowDropUp className={`${openProductMenu ? '' : 'rotate-180'} `} />
+                </Stack>
+                {openProductMenu && (
+                  <Stack className="justify-start items-start gap-1 mt-2.5">
+                    {productMainMenus.map((menuItem, index) => (
+                      <ProductMenuItem
+                        key={index}
+                        icon={menuItem.icon}
+                        label={menuItem.label}
+                        subLabel={menuItem.subLabel}
+                        href={menuItem.href}
+                      />
+                    ))}
+                  </Stack>
+                )}
+              </Box>
+              <MenuLabel className="px-4 py-2.5">
+                <Link href="https://discord.com/" target="_blank">
+                  Join Discord
+                </Link>
+              </MenuLabel>
+              <MenuLabel className="px-4 py-2.5">Pricing</MenuLabel>
+              <Link href="https://console.planton.cloud/" target="_blank" className="px-4 py-2.5 ">
+                <Stack className="flex-row gap-1">
+                  <MenuLabel>Open Console</MenuLabel>
+                  <OpenInNew />
+                </Stack>
+              </Link>
+            </Stack>
+          </Fade>
+        )}
+      </Popper>
+    </>
+  );
+}
+
+export function Header() {
+  return (
+    <Box>
+      <Box className="hidden md:block">
+        <HeaderComputer />
+      </Box>
+      <Box className="md:hidden">
+        <HeaderMobile />
+      </Box>
+      <Features />
     </Box>
   );
 }

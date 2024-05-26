@@ -7,7 +7,6 @@ import {
   Extensible,
   IacWorkFlowPlayList,
 } from '@/app/_components';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Integrated IaC Workflow',

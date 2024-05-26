@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import Image from 'next/image';
 
-import { East } from '@mui/icons-material';
 import { Box, BoxProps, Stack, Typography } from '@mui/material';
 import { ChipIacWorkflow, RoundBtn, OrganizationCarousel } from '@/app/_components';
 
@@ -23,7 +22,7 @@ const SquareRadient: FC<SquareRadientProps> = ({ parentBoxProps, childBoxProps }
   return (
     <Box
       {...parentBoxProps}
-      className={` w-[2800px] h-[2800px] p-20 rounded-[117px] border-4 border-teal-600 blur-3xl ${parentBoxProps?.className}`}
+      className={`w-[400%] md:w-[150%] aspect-square p-20 rounded-[117px] border-4 border-teal-600 blur-3xl ${parentBoxProps?.className}`}
     >
       <Box
         {...childBoxProps}
@@ -35,54 +34,52 @@ const SquareRadient: FC<SquareRadientProps> = ({ parentBoxProps, childBoxProps }
 
 export const Automate: FC = () => {
   return (
-    <>
+    <Box className="pb-12 md:pb-36">
       <Box className="relative">
         <SquareRadient
           parentBoxProps={{
             className:
-              'absolute -top-[2400px] left-1/2 transform -translate-x-1/2 rotate-45 origin-center',
+              'absolute -bottom-[150px] md:-bottom-[450px] left-1/2 transform -translate-x-1/2 rotate-45 origin-center',
           }}
         />
       </Box>
-      <Stack className="mx-auto items-center gap-8">
+      <Stack className="mx-5 md:mx-auto items-center gap-6 md:gap-8">
         <Box className="z-10">
-          <ChipIacWorkflow>Introducing Integrated IaC Workflows</ChipIacWorkflow>
+          <ChipIacWorkflow labelProps={{ children: 'Introducing Integrated IaC Workflows' }} />
         </Box>
-        <Stack className="self-stretch items-center gap-10 relative">
-          <Typography className="w-5/12 text-center text-white text-5xl font-extrabold leading-snug z-10">
-            Automate your workflow <br /> from idea to production with Code{'->'} Cloud
+        <Stack className="self-stretch items-center gap-5 md:gap-10 relative">
+          <Typography className="w-full md:w-10/12 lg:w-8/12 xl:w-4/12 text-center text-white text-[28px] !leading-snug md:text-5xl font-extrabold z-10">
+            Automate your workflow from idea to production with {'Code->Cloud'}
           </Typography>
-          <RoundBtn
-            endIcon={
-              <Stack className="flex-row gap-1">
-                Get Started with Code
-                <East />
-                Cloud
-              </Stack>
-            }
-            className="bg-white text-black"
-          />
+          <RoundBtn className="bg-white text-black text-base md:text-xl">
+            Get Started with Code {`->`} Cloud
+          </RoundBtn>
         </Stack>
         <Image
           src="images/home/dashboard.svg"
           alt=""
           width={0}
           height={0}
-          className="w-6/12 mt-10 z-10"
+          className="w-fit z-20 md:w-6/12 md:mt-10"
         />
-
-        <Box className="w-[150vh] h-[150vh] bg-gradient-to-br from-indigo-950 from-65% via-indigo-800 to-transparent to-70% top-[650px] rotate-45 rounded-[200px] blur-3xl absolute" />
-        <Typography className="text-center text-white text-sm font-medium leading-6 mt-20 z-10">
+        <Typography className="text-center text-white text-sm font-medium leading-6 z-20 md:mt-20">
           Poised to Serve World-Class Organizations Like
         </Typography>
       </Stack>
-      <Box className="relative mx-auto mt-10">
-        <Stack className="absolute -top-28 w-full flex-row inset-0 items-center justify-between">
+      <OrganizationCarousel
+        className="!mx-5 md:mx-auto mt-3 md:mt-16"
+        spaceBetween={20}
+        breakpoints={{ 768: { slidesPerView: 5 } }}
+      />
+      <Box className="w-full relative">
+        <Box className="w-full md:w-[250%] aspect-square bg-gradient-to-br from-indigo-950 from-65% via-indigo-800 to-transparent to-70%  rounded-[200px] blur-3xl absolute -top-64 md:-top-10 rotate-45 left-1/2 transform -translate-x-1/2" />
+      </Box>
+      <Box className="relative mx-auto">
+        <Stack className="hidden md:block absolute -top-28 w-full flex-row inset-0 items-center justify-between">
           <BlurRound />
           <BlurRound />
         </Stack>
-        <OrganizationCarousel />
       </Box>
-    </>
+    </Box>
   );
 };
