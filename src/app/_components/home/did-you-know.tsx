@@ -77,7 +77,7 @@ export const DidYouKnowSection: FC = () => {
             </Typography>
 
             <Stack className="mt-4 flex-row items-center md:mt-7">
-              <Typography className="text-white text-base font-semibold md:text-2xl">
+              <Typography className="text-white text-base md:text-2xl font-semibold">
                 Discover IaC Workflows
               </Typography>
               <East />

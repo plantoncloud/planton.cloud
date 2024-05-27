@@ -125,7 +125,7 @@ export const Extensible: FC = () => {
         ))}
       </Grid>
       <Stack justifyContent="center" alignContent="center" direction="row">
-        <Stack className="md:w-9/12 md:mx-auto mt-10 md:mt-80 gap-4">
+        <Stack className="md:w-9/12 md:mx-auto mt-10 md:mt-[330px] gap-4">
           <StyledBorderGradient
             className="md:w-7/12 mx-auto p-2.5 bg-stone-900 bg-opacity-70 border-opacity-50 backdrop-blur-[70px] rounded-2xl
             shadow border-4 border-transparent"

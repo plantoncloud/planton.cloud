@@ -44,13 +44,14 @@ export const Elevate: FC = () => {
           </Typography>
           <ChipIacWorkflow
             labelProps={{
-              className: 'text-[8px]',
+              className: '!text-[8px] md:!text-base',
               children: 'Introducing Integrated IaC Workflows',
             }}
             chipProps={{
               className: '!px-2.5 !py-1.5 md:!px-6 md:!py-4',
             }}
-            iconclassName="w-4 md:w-7"
+            iconclassName="!w-4 md:!w-7"
+            eastIconProps={{ className: 'text-sm md:text-2xl' }}
           />
           <RoundBtn endIcon={<East />} className="w-fit bg-white text-black text-xs md:text-sm">
             Get Started

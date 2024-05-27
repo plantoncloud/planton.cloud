@@ -39,25 +39,29 @@ export const FooterBanner: FC<FooterBannerProps> = ({
   varient,
 }) => {
   if (!varient) {
-    return <Box className="px-5 py-8 z-20 md:px-0" sx={{ background }}>
-      <Box className="container">
-        <Stack className="justify-start items-start gap-3">
-          {title && <Typography className="text-white text-2xl font-semibold ">{title}</Typography>}
-          {subTitle && (
-            <Typography className="text-white text-xs font-normal">{subTitle}</Typography>
-          )}
-          <Stack className="flex-row gap-4">
-            {actions.map(({ label, href }, index) => (
-              <RoundBtnSmall key={index}>
-                <Link target="_blank" href={href}>
-                  {label}
-                </Link>
-              </RoundBtnSmall>
-            ))}
+    return (
+      <Box className="px-5 py-8 z-20 md:px-0" sx={{ background }}>
+        <Box className="container">
+          <Stack className="justify-start items-start gap-3">
+            {title && (
+              <Typography className="text-white text-2xl font-semibold ">{title}</Typography>
+            )}
+            {subTitle && (
+              <Typography className="text-white text-xs font-normal">{subTitle}</Typography>
+            )}
+            <Stack className="flex-row gap-4">
+              {actions.map(({ label, href }, index) => (
+                <RoundBtnSmall key={index} className="px-4 py-2.5">
+                  <Link target="_blank" href={href}>
+                    {label}
+                  </Link>
+                </RoundBtnSmall>
+              ))}
+            </Stack>
           </Stack>
-        </Stack>
+        </Box>
       </Box>
-    </Box>
+    );
   }
 
   return (
@@ -69,12 +73,12 @@ export const FooterBanner: FC<FooterBannerProps> = ({
             performance in action.
           </MediumLabel>
           <Stack className="flex-row justify-start items-center gap-2.5">
-            <RoundBtnSmall>
+            <RoundBtnSmall className="px-4 py-2.5">
               <Link target="_blank" href={REQUEST_DEMO_URL}>
                 Request For Demo Today!
               </Link>
             </RoundBtnSmall>
-            <RoundBtnSmall>
+            <RoundBtnSmall className="px-4 py-2.5">
               <Link target="_blank" href={REQUEST_DEMO_URL}>
                 Contact Sales
               </Link>

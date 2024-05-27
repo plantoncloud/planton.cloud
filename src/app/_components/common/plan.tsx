@@ -56,7 +56,9 @@ export const Plan: FC<IPlan> = ({ imgSrc, name, price, period, features, isPopul
           ))}
         </Stack>
       </Stack>
-      <RoundBtnSmall className="self-stretch bg-teal-600 border-none">Choose Plan</RoundBtnSmall>
+      <RoundBtnSmall className="px-4 py-2.5 self-stretch bg-teal-600 border-none">
+        Choose Plan
+      </RoundBtnSmall>
     </StyledPricingBorderGradient>
   );
 };

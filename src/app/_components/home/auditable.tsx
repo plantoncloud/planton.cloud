@@ -23,7 +23,7 @@ export const AuditableSection: FC = () => {
   return (
     <Box className="mx-5 relative md:mx-0 ">
       <Box className="container relative mb-10 md:mb-20">
-        <Typography className="text-center text-white text-2xl font-extrabold mb-8 md:text-[2rem]">
+        <Typography className="text-center text-white text-2xl md:text-3xl font-extrabold mb-8">
           Auditable Automation
         </Typography>
         <Stack className="gap-7 justify-center md:flex-row md:gap-12">

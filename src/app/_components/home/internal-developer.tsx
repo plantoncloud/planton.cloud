@@ -49,7 +49,13 @@ export const InternalDeveloperSection: FC = () => {
       <StyledLayoutContainer className="w-full h-[796px] absolute z-0 bg-cover" />
       <Stack className="gap-5 pt-10 px-5 md:gap-16 md:px-0 md:ml-[15%] md:pt-48">
         <Stack className="gap-7 z-10">
-          <ChipIacWorkflow labelProps={{ children: 'Introducing Integrated IaC Workflows' }} />
+          <ChipIacWorkflow
+            labelProps={{
+              children: 'Introducing Integrated IaC Workflows',
+              className: '!text-base',
+            }}
+            chipProps={{ className: 'w-full md:w-fit' }}
+          />
           <Stack className="justify-start items-start gap-3">
             <Stack className="justify-start items-start">
               <Typography className="text-white text-base font-extrabold leading-normal">
@@ -77,14 +83,14 @@ export const InternalDeveloperSection: FC = () => {
                     <TextField
                       fullWidth
                       placeholder="Your Company Name"
-                      inputProps={{ className: 'text-white' }}
+                      inputProps={{ className: 'text-white text-xs font-medium' }}
                     />
                   </Box>
                 </Stack>
                 <Button
                   endIcon={<East />}
                   variant="contained"
-                  className="bg-primary-50 p-[10px] rounded-full text-white text-xs font-medium px-4"
+                  className="w-fit bg-primary-50 p-[10px] rounded-full text-white text-xs font-medium px-4"
                 >
                   Get Started
                 </Button>

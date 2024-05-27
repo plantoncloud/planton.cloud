@@ -33,9 +33,9 @@ export const IdeaToLaunch: FC = () => {
             <Stack className="justify-between items-start px-6 md:px-7 py-6 md:py-10 gap-10 md:gap-20 bg-gradient-to-br from-indigo-700 to-violet-500 rounded-3xl relative overflow-hidden">
               <Box className="w-full aspect-square origin-bottom-right bg-gradient-to-b from-emerald-500 from-30% via-violet-500 via-60% to-transparent to-85% rounded-full blur-sm opacity-60 absolute -top-10 left-[65%]" />
               <Typography className="text-white text-2xl md:text-5xl font-extrabold md:font-black !leading-snug z-10">
-                From idea to launch, automate with {''}
+                From idea to launch, automate with <br />
                 <Typography
-                  className="text-white text-2xl md:text-5xl font-black !leading-snug whitespace-nowrap"
+                  className="text-white text-2xl md:text-5xl font-extrabold md:font-black !leading-snug whitespace-nowrap"
                   variant="caption"
                 >
                   {'Code->Cloud'}

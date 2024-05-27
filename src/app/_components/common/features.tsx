@@ -26,7 +26,7 @@ const FeatureItem: FC<IMenuItem> = ({ label, href }) => {
   return (
     <Link
       href={href}
-      className="w-full px-3 py-6 bg-neutral-900 first:rounded-t-sm last:rounded-b-sm shadow border-b border-zinc-800"
+      className="w-full px-3 py-3 bg-neutral-900 first:rounded-t-lg last:rounded-b-lg shadow"
     >
       <Typography className="text-white text-xs font-normal">{label}</Typography>
     </Link>
@@ -89,7 +89,7 @@ export const FeaturesMobile: FC = () => {
         placement="bottom-start"
         transition
         disablePortal
-        className="z-20"
+        className="z-50"
       >
         {({ TransitionProps, placement }) => (
           <Grow
@@ -98,7 +98,7 @@ export const FeaturesMobile: FC = () => {
               transformOrigin: placement === 'bottom-start' ? 'left top' : 'left bottom',
             }}
           >
-            <Paper className="z-20">
+            <Paper className="rounded-lg">
               <ClickAwayListener onClickAway={handleClose}>
                 <FeatureList />
               </ClickAwayListener>

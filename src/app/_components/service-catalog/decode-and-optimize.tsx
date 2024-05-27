@@ -18,7 +18,7 @@ export const TrustedImage: FC<TrustedImageProps> = ({ src, className }) => {
     <Image
       alt=""
       src={src}
-      className={`w-fit absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${className}`}
+      className={`${className} absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 `}
       width={0}
       height={0}
     />
@@ -74,6 +74,7 @@ export const DecodeAndOptimize: FC = () => {
             fingertips."
           src="https://www.loom.com/embed/00c6678bcb2c42d4ab78cc6a42d057aa?sid=422baba7-dec0-4483-afd5-d874cd7f1d1a?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
           reverse={{ desktop: true, mobile: true }}
+          subTitleClassName="!font-medium"
         />
       </Box>
       <Box className="relative">
