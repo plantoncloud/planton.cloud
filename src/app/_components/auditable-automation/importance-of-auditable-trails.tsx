@@ -10,7 +10,7 @@ const SemiboldLabel: FC<TypographyProps> = (props) => {
   return (
     <Typography
       {...props}
-      className={`${props.className} text-white text-3xl font-semibold leading-10`}
+      className={`${props.className} text-white text-xl md:text-3xl font-semibold !leading-snug`}
     >
       {props.children}
     </Typography>
@@ -21,7 +21,7 @@ export const MediumLabel: FC<TypographyProps> = (props) => {
   return (
     <Typography
       {...props}
-      className={`${props.className} text-white text-xl font-medium leading-7`}
+      className={`${props.className} text-white text-base md:text-xl font-medium !leading-snug`}
     >
       {props.children}
     </Typography>
@@ -32,7 +32,7 @@ const MediumGrayLabel: FC<TypographyProps> = (props) => {
   return (
     <Typography
       {...props}
-      className={`${props.className} text-stone-500 text-xl font-medium leading-7`}
+      className={`${props.className} text-stone-500 text-base md:text-xl font-medium !leading-snug`}
     >
       {props.children}
     </Typography>
@@ -84,12 +84,12 @@ const CenteredDivider: FC<CenteredDividerrProps> = ({ children }) => {
 
 export const ImportanceOfAuditableTrails: FC = () => {
   return (
-    <Box className="max-w-7xl mx-auto my-10">
+    <Box className="max-w-7xl px-4 md:px-0 mx-auto my-10">
       <CenteredDivider>
         <ChipLabel>The Importance of Auditable Trails</ChipLabel>
       </CenteredDivider>
 
-      <Box className="relative border border-zinc-800 mt-4">
+      <Box className="relative border border-zinc-800 mt-5">
         <Box className="absolute left-[33.33%] w-px h-[calc(100%-175px)] border border-red-600 shadow-md z-0"></Box>
         <Box className="absolute left-[33%] w-3 h-60 top-[440px] bg-neutral-950 shadow-md blur-sm z-0"></Box>
         <Box className="absolute left-[33.30%] w-1 h-60 top-[440px] bg-red-600 blur-md shadow-md z-0"></Box>
@@ -97,14 +97,16 @@ export const ImportanceOfAuditableTrails: FC = () => {
         <Grid container className="bg-neutral-900">
           <Grid
             item
-            xs={4}
+            xs={12}
+            md={4}
             className="p-6 bg-gradient-to-tl from-black from-70% to-yellow-950 to-90% border border-zinc-800 "
           >
             <BoldLabel>Why Auditable Trails Matter?</BoldLabel>
           </Grid>
           <Grid
             item
-            xs={8}
+            xs={12}
+            md={8}
             className="p-6 bg-gradient-to-r from-purple-950 via-blue-950 to-gray-950 border border-zinc-800 "
           >
             <Stack className="justify-center items-start gap-2.5">
@@ -112,7 +114,7 @@ export const ImportanceOfAuditableTrails: FC = () => {
                 Trial Plantoncloud Enterprise to see our customizable platform, security, and
                 performance in action.
               </MediumLabel>
-              <RoundBtnSmall>
+              <RoundBtnSmall className="px-4 py-2.5 ">
                 <Link target="_blank" href={REQUEST_DEMO_URL}>
                   Request For Demo Today!
                 </Link>
@@ -121,21 +123,24 @@ export const ImportanceOfAuditableTrails: FC = () => {
           </Grid>
         </Grid>
 
-        <Grid container className="mt-32">
-          <Grid item xs={4} className="p-6">
+        <Grid container className="mt-8 md:mt-32">
+          <Grid item xs={12} md={4} className="p-6">
             <LabelAndSubLabelSection
               label="Seamless Change Integration."
               subLabel="Changes captured in a unified format, akin to Git diffs. Easy for teams to review &
                 understand modifications."
             />
           </Grid>
-          <Grid item xs={8} className="p-6">
-            <Stack className="gap-9">
-              <Typography variant="caption" className="text-white text-xl font-medium leading-7">
+          <Grid item xs={12} md={8} className="p-6">
+            <Stack className="gap-3 md:gap-9">
+              <Typography
+                variant="caption"
+                className="text-white text-base md:text-xl font-medium !leading-snug"
+              >
                 Develop.{' '}
                 <Typography
                   variant="caption"
-                  className="text-stone-500 text-xl font-medium leading-7"
+                  className="text-stone-500 text-base md:text-xl font-medium !leading-snug"
                 >
                   GitHub, Bitbucket, GitLab, Azure DevOps or our CLI.
                 </Typography>
@@ -147,7 +152,7 @@ export const ImportanceOfAuditableTrails: FC = () => {
                 height={0}
                 className="w-fit"
               />
-              <Box className="p-6 bg-black rounded-lg border border-dashed border-white mt-10 relative ml-12">
+              <Box className="p-4 md:p-6 bg-black rounded-lg border border-dashed border-white relative md:ml-12 md:mt-10">
                 <Box className="relative">
                   <Image
                     src="/images/auditable-automation/line-1.svg"
@@ -161,22 +166,21 @@ export const ImportanceOfAuditableTrails: FC = () => {
                     className="absolute -top-[8px] -left-[75px]"
                   />
                 </Box>
-
                 <Typography
                   variant="caption"
-                  className="text-stone-500 text-base font-medium leading-snug"
+                  className="text-stone-500 text-sm md:text-base font-medium leading-snug"
                 >
                   Know{' '}
                   <Typography
                     variant="caption"
-                    className="text-white text-base font-medium leading-snug"
+                    className="text-white text-sm md:text-base font-medium leading-snug"
                   >
                     who{' '}
                   </Typography>
                   and{' '}
                   <Typography
                     variant="caption"
-                    className="text-white text-base font-medium leading-snug"
+                    className="text-white text-sm md:text-base font-medium leading-snug"
                   >
                     when{' '}
                   </Typography>
@@ -188,14 +192,14 @@ export const ImportanceOfAuditableTrails: FC = () => {
         </Grid>
 
         <Grid container className="mt-32">
-          <Grid item xs={4} className="p-6">
+          <Grid item xs={12} md={4} className="p-6">
             <LabelAndSubLabelSection
               label="Navigating Change with Confidence"
               subLabel="Chronological record of modifications with “Version History” for enhanced decision-making
           and auditability."
             />
           </Grid>
-          <Grid item xs={8} className="p-6">
+          <Grid item xs={12} md={8} className="p-6">
             <Box className="relative w-fit bg-zinc-900 rounded-xl ml-11">
               <Image
                 src="/images/auditable-automation/version-list.svg"
@@ -244,14 +248,14 @@ export const ImportanceOfAuditableTrails: FC = () => {
         </Grid>
 
         <Grid container className="mt-72">
-          <Grid item xs={4} className="p-6">
+          <Grid item xs={12} md={4} className="p-6">
             <LabelAndSubLabelSection
               label="Fortifying Cloud Infrastructure"
               subLabel="Auditable Automation not only tracks changes but also enhances security by ensuring each
           action is accountable."
             />
           </Grid>
-          <Grid item xs={8} className="p-6">
+          <Grid item xs={12} md={8} className="p-6">
             <Box className="relative w-fit bg-zinc-900 rounded-xl ml-11">
               <Image
                 src="/images/auditable-automation/version-list.svg"
@@ -268,7 +272,7 @@ export const ImportanceOfAuditableTrails: FC = () => {
           </Grid>
         </Grid>
 
-        <FooterBanner varient='subFooter' />
+        <FooterBanner varient="subFooter" />
       </Box>
     </Box>
   );

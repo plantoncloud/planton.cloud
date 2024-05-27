@@ -4,32 +4,32 @@ import { CarouselSection, CarouselSectionProps } from './client/carousel-section
 
 const carouselData: CarouselSectionProps[] = [
   {
-    title: 'Reliable automation for',
+    title: 'Reliable automation',
     labels: [],
   },
   {
     title: 'For',
     labels: [
-      { label: 'Every Deployment', width: '455px' },
-      { label: 'Every Update', width: '340px' },
-      { label: 'DevOps Teams', width: '375px' },
+      { label: 'Every Deployment', width: { desktop: '455px', mobile: '240px' } },
+      { label: 'Every Update', width: { desktop: '340px', mobile: '180px' } },
+      { label: 'DevOps Teams', width: { desktop: '375px', mobile: '200px' } },
     ],
   },
   {
     title: 'But not for',
     labels: [
-      { label: 'Untracked Changes', width: '495px' },
-      { label: 'Undocumented Modifications', width: '725px' },
-      { label: 'Opaque Operations', width: '485px' },
-      { label: 'Disorganized Workflows', width: '600px' },
+      { label: 'Untracked Changes', width: { desktop: '495px', mobile: '255px' } },
+      { label: 'Undocumented Modifications', width: { desktop: '725px', mobile: '370px' } },
+      { label: 'Opaque Operations', width: { desktop: '485px', mobile: '250px' } },
+      { label: 'Disorganized Workflows', width: { desktop: '600px', mobile: '310px' } },
     ],
   },
 ];
 
 export const Automation: FC = () => {
   return (
-    <Box className="w-10/12 m-auto">
-      <Stack className="gap-1.5 h-[calc(100vh-150px)] justify-center relative">
+    <Box className="md:w-10/12 md:mx-auto p-4 md:p-0">
+      <Stack className="gap-3 md:gap-1.5 md:h-[calc(100vh-150px)] md:justify-center relative">
         {carouselData.map((carousel, idx) => (
           <CarouselSection {...carousel} key={idx} />
         ))}
