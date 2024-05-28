@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import { BoxProps, Stack, Typography, TypographyProps } from '@mui/material';
+import { BoxProps, Stack, SvgIconProps, Typography, TypographyProps } from '@mui/material';
 import { East } from '@mui/icons-material';
 import { Chip } from './chip';
 import Link from 'next/link';
@@ -9,21 +9,27 @@ interface IChipIacWorkflow {
   chipProps?: BoxProps;
   labelProps?: TypographyProps;
   iconclassName?: string;
+  eastIconProps?: SvgIconProps;
 }
 
-export const ChipIacWorkflow: FC<IChipIacWorkflow> = ({ labelProps, chipProps, iconclassName }) => {
+export const ChipIacWorkflow: FC<IChipIacWorkflow> = ({
+  labelProps,
+  chipProps,
+  iconclassName,
+  eastIconProps,
+}) => {
   return (
     <Link href="/iac-workflow">
       <Chip {...chipProps}>
-        <Stack className="flex-row gap-1 justify-center items-center">
-          <Image
-            width={0}
-            height={0}
-            alt="Cloud Server"
-            className={`${iconclassName} bg-transparent`}
-            src="images/home/cloud-server.svg"
-          />
-          <Stack className="justify-center items-center gap-3 flex-row">
+        <Stack className="flex-row gap-3 justify-between items-center">
+          <Stack className="justify-center items-center gap-1 flex-row">
+            <Image
+              width={0}
+              height={0}
+              alt="Cloud Server"
+              className={`${iconclassName} w-7 bg-transparent`}
+              src="images/home/cloud-server.svg"
+            />
             <Typography
               {...labelProps}
               className={`text-white text-xs md:text-base font-normal ${
@@ -32,8 +38,8 @@ export const ChipIacWorkflow: FC<IChipIacWorkflow> = ({ labelProps, chipProps, i
             >
               {labelProps.children}
             </Typography>
-            <East />
           </Stack>
+          <East {...eastIconProps} />
         </Stack>
       </Chip>
     </Link>

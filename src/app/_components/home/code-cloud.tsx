@@ -28,7 +28,7 @@ const DevOpsChip: FC<DevOpsChipProps> = ({ label, link, className }) => {
   return (
     <Link
       href={link}
-      className={`px-6 py-4 bg-white bg-opacity-5 hover:bg-opacity-15 rounded-lg text-center text-white text-sm font-medium leading-tight inline-block whitespace-nowrap ${className}`}
+      className={`px-5 py-3 md:px-6 md:py-4 bg-white bg-opacity-5 hover:bg-opacity-15 rounded-lg text-center text-white text-sm font-medium leading-tight inline-block whitespace-nowrap ${className}`}
     >
       {label}
     </Link>
@@ -51,7 +51,7 @@ const DevOpsRealm: FC = () => {
       </Typography>
       <Stack className="flex-row justify-center items-center gap-6 overflow-x-auto w-[calc(100vw-10px)] md:w-auto">
         {devOps.map((devOp, index) => (
-          <DevOpsChip {...devOp} key={index} className={ index === 0 ? 'ml-[400px] md:ml-0' : '' } />
+          <DevOpsChip {...devOp} key={index} className={index === 0 ? 'ml-[400px] md:ml-0' : ''} />
         ))}
       </Stack>
     </Stack>

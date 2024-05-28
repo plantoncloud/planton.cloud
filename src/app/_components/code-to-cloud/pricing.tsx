@@ -33,12 +33,7 @@ export const Pricing: FC = () => {
         <Box className="w-[696px] h-[696px] bg-orange-800 rounded-full absolute -right-44 top-92 blur-3xl opacity-20" />
       </Stack>
       <Box className="mt-6 md:hidden">
-        {/* <PricingCarousel  spaceBetween={20} /> */}
-        <Stack className="flex-row overflow-x-auto gap-5">
-          {plans.map((plan, index) => (
-            <Plan key={index} {...plan} />
-          ))}
-        </Stack>
+        <PricingCarousel />
       </Box>
     </Box>
   );

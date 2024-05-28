@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function AuditableAutomation() {
   return (
-    <Box className="relative bg-black bg-opacity-40 overflow-hidden">
+    <Box className="relative md:bg-black bg-opacity-40 overflow-hidden">
       <Automation />
       <WhatIsAuditableAutomation />
       <ImportanceOfAuditableTrails />

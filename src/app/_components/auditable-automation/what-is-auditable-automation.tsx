@@ -15,7 +15,7 @@ export const BoldLabel: FC<TypographyProps> = (props) => {
   return (
     <Typography
       {...props}
-      className={`${props.className} text-white text-3xl font-bold leading-10`}
+      className={`${props.className} text-white text-xl md:text-3xl font-bold !leading-snug`}
     >
       {props.children}
     </Typography>
@@ -24,29 +24,34 @@ export const BoldLabel: FC<TypographyProps> = (props) => {
 
 export const WhatIsAuditableAutomation: FC = () => {
   return (
-    <Stack className="max-w-7xl mx-auto justify-start items-center gap-5">
+    <Stack className="max-w-7xl px-4 md:px-0 mt-12 md:mt-0 mx-auto justify-start items-center gap-5">
       <ChipLabel>What is Auditable Automation?</ChipLabel>
-      <Typography className="max-w-2xl text-center text-white text-5xl font-black leading-tight">
-        Empowering Transparency and Accountability
+      <Typography className="max-w-2xl text-center text-white text-2xl md:text-5xl font-black !leading-snug">
+        Empowering Transparency <br /> and Accountability
       </Typography>
       <Grid container columns={12} className="">
         <Grid
           item
-          xs={4}
-          className="self-stretch p-6 border border-zinc-800 justify-start items-start gap-2.5 flex"
+          xs={12}
+          md={4}
+          className="p-2 md:p-6 border border-zinc-800"
         >
           <BoldLabel>From configuration update to deployment.</BoldLabel>
         </Grid>
         <Grid
           item
-          xs={8}
-          className="self-stretch p-6 bg-black border border-zinc-800 justify-start items-start gap-2.5 flex"
+          xs={12}
+          md={8}
+          className="p-2 md:p-6 bg-black border border-zinc-800"
         >
           <Typography
             variant="caption"
-            className="text-stone-500 text-2xl font-semibold  leading-9"
+            className="text-stone-500 text-base md:text-2xl font-semibold !leading-snug"
           >
-            <Typography variant="caption" className="text-white text-2xl font-semibold  leading-9">
+            <Typography
+              variant="caption"
+              className="text-white text-base md:text-2xl font-semibold !leading-snug"
+            >
               Auditable Automation{' '}
             </Typography>
             revolutionizes how changes to cloud infrastructure are tracked, offering unparalleled

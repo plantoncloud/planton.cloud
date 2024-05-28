@@ -4,37 +4,37 @@ import { CarouselSection, CarouselSectionProps } from './client/carousel-section
 
 const carouselData: CarouselSectionProps[] = [
   {
-    title: 'Reliable automation for',
+    title: 'Reliable automation',
     labels: [],
   },
   {
     title: 'For',
     labels: [
-      { label: 'Every Deployment', width: '455px' },
-      { label: 'Every Update', width: '340px' },
-      { label: 'DevOps Teams', width: '375px' },
+      { label: 'Every Deployment', width: { md: '455px', sm: '240px' } },
+      { label: 'Every Update', width: { md: '340px', sm: '180px' } },
+      { label: 'DevOps Teams', width: { md: '375px', sm: '200px' } },
     ],
   },
   {
     title: 'But not for',
     labels: [
-      { label: 'Untracked Changes', width: '495px' },
-      { label: 'Undocumented Modifications', width: '725px' },
-      { label: 'Opaque Operations', width: '485px' },
-      { label: 'Disorganized Workflows', width: '600px' },
+      { label: 'Untracked Changes', width: { md: '495px', sm: '255px' } },
+      { label: 'Undocumented Modifications', width: { md: '725px', sm: '370px' } },
+      { label: 'Opaque Operations', width: { md: '485px', sm: '250px' } },
+      { label: 'Disorganized Workflows', width: { md: '600px', sm: '310px' } },
     ],
   },
 ];
 
 export const Automation: FC = () => {
   return (
-    <Box className="w-10/12 m-auto">
-      <Stack className="gap-1.5 h-[calc(100vh-150px)] justify-center relative">
+    <Box className="md:w-10/12 md:mx-auto p-4 md:p-0">
+      <Stack className="gap-3 md:gap-1.5 md:h-[calc(100vh-150px)] md:justify-center relative">
         {carouselData.map((carousel, idx) => (
           <CarouselSection {...carousel} key={idx} />
         ))}
       </Stack>
-      <Box className="-z-10 absolute right-0 top-0 -mt-36 -mr-40 overflow-hidden">
+      <Box className="-z-10 md:z-0 absolute right-0 top-0 -mt-36 -mr-40 overflow-hidden">
         <video width="800" height="800" autoPlay={true} loop={true} muted playsInline>
           <source src="images/auditable-automation/animation-1.mp4" type="video/mp4" />
           Your browser does not support the video tag.

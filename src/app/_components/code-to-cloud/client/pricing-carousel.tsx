@@ -1,38 +1,43 @@
 'use client';
 
-import React, { FC } from 'react';
-import { Navigation } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import React, { FC, useEffect, useRef } from 'react';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import { plans } from '@/app/_utils/constants';
 import { Plan } from '../../common';
 
-interface IPricingCarousel {
-  className?: string;
-  spaceBetween?: number | string;
-}
+const responsive = {
+  mobile: {
+    breakpoint: { min: 0, max: 4000 },
+    items: 1,
+    slidesToSlide: 1,
+  },
+};
 
-export const PricingCarousel: FC<IPricingCarousel> = ({ className, spaceBetween }) => {
+export const PricingCarousel: FC = () => {
+  const carouselRef = useRef(null);
+  const middleIndex = Math.floor(plans.length / 2);
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      carouselRef.current.goToSlide(middleIndex - 1, false);
+    }
+  }, [middleIndex]);
+
   return (
-    <Swiper
-      className={className}
-      modules={[Navigation]}
-      spaceBetween={spaceBetween}
-      effect="slide"
-      slidesPerView="auto"
-      centeredSlides={true}
-      navigation
-      initialSlide={1}
-      loop={true}
-      wrapperClass=""
+    <Carousel
+      ref={carouselRef}
+      swipeable={true}
+      responsive={responsive}
+      infinite={true}
+      centerMode={true}
+      itemClass="px-2"
+      arrows={false}
+      showDots={false}
     >
       {plans.map((plan, index) => (
-        <SwiperSlide key={index}>
-          <Plan {...plan} />
-        </SwiperSlide>
+        <Plan {...plan} key={index} />
       ))}
-    </Swiper>
+    </Carousel>
   );
 };
