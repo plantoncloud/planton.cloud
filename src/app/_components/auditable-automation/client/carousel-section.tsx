@@ -28,7 +28,7 @@ const SecondaryLabel: FC<TypographyProps> = (props) => {
 
 export interface ICarouselLabel {
   label: string;
-  width: { mobile: string; desktop: string };
+  width: { sm: string; md: string };
 }
 
 export interface CarouselSectionProps {
@@ -53,8 +53,7 @@ export const CarouselItem: FC<ICarouselItem> = ({ labels, isMobile }) => {
   }, []);
 
   const animWidth = useMemo(
-    () =>
-      isMobile ? labels[currentIndex]?.width?.mobile : labels[currentIndex]?.width?.desktop ?? '',
+    () => (isMobile ? labels[currentIndex]?.width?.sm : labels[currentIndex]?.width?.md ?? ''),
     [currentIndex]
   );
 

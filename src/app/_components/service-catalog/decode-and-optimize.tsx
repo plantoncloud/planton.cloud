@@ -73,7 +73,7 @@ export const DecodeAndOptimize: FC = () => {
           subTitle="Fast-track problem-solving and refine your builds with a full history at your
             fingertips."
           src="https://www.loom.com/embed/00c6678bcb2c42d4ab78cc6a42d057aa?sid=422baba7-dec0-4483-afd5-d874cd7f1d1a?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
-          reverse={{ desktop: true, mobile: true }}
+          reverse={{ md: true, sm: true }}
           subTitleClassName="!font-medium"
         />
       </Box>

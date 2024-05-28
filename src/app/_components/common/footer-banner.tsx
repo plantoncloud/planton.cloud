@@ -65,7 +65,10 @@ export const FooterBanner: FC<FooterBannerProps> = ({
   }
 
   return (
-    <Grid className="w-full px-6 py-9  border border-zinc-800 md:mt-32" sx={{ background }}>
+    <Grid
+      className="w-full px-4 py-5 md:px-6 md:py-9  border border-zinc-800 md:mt-32"
+      sx={{ background }}
+    >
       <Grid item xs={8}>
         <Stack className="self-stretch justify-center items-start gap-2.5">
           <MediumLabel>

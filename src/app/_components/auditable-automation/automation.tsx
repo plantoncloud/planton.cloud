@@ -10,18 +10,18 @@ const carouselData: CarouselSectionProps[] = [
   {
     title: 'For',
     labels: [
-      { label: 'Every Deployment', width: { desktop: '455px', mobile: '240px' } },
-      { label: 'Every Update', width: { desktop: '340px', mobile: '180px' } },
-      { label: 'DevOps Teams', width: { desktop: '375px', mobile: '200px' } },
+      { label: 'Every Deployment', width: { md: '455px', sm: '240px' } },
+      { label: 'Every Update', width: { md: '340px', sm: '180px' } },
+      { label: 'DevOps Teams', width: { md: '375px', sm: '200px' } },
     ],
   },
   {
     title: 'But not for',
     labels: [
-      { label: 'Untracked Changes', width: { desktop: '495px', mobile: '255px' } },
-      { label: 'Undocumented Modifications', width: { desktop: '725px', mobile: '370px' } },
-      { label: 'Opaque Operations', width: { desktop: '485px', mobile: '250px' } },
-      { label: 'Disorganized Workflows', width: { desktop: '600px', mobile: '310px' } },
+      { label: 'Untracked Changes', width: { md: '495px', sm: '255px' } },
+      { label: 'Undocumented Modifications', width: { md: '725px', sm: '370px' } },
+      { label: 'Opaque Operations', width: { md: '485px', sm: '250px' } },
+      { label: 'Disorganized Workflows', width: { md: '600px', sm: '310px' } },
     ],
   },
 ];
@@ -34,7 +34,7 @@ export const Automation: FC = () => {
           <CarouselSection {...carousel} key={idx} />
         ))}
       </Stack>
-      <Box className="-z-10 absolute right-0 top-0 -mt-36 -mr-40 overflow-hidden">
+      <Box className="-z-10 md:z-0 absolute right-0 top-0 -mt-36 -mr-40 overflow-hidden">
         <video width="800" height="800" autoPlay={true} loop={true} muted playsInline>
           <source src="images/auditable-automation/animation-1.mp4" type="video/mp4" />
           Your browser does not support the video tag.

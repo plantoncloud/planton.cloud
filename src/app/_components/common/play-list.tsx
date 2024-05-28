@@ -7,7 +7,7 @@ export interface PlayListBoxProps {
   subTitle: string;
   subTitleClassName?: string;
   src: string;
-  reverse?: { mobile?: boolean; desktop?: boolean };
+  reverse?: { sm?: boolean; md?: boolean };
 }
 
 export const PlayListBox: FC<PlayListBoxProps> = ({
@@ -21,8 +21,8 @@ export const PlayListBox: FC<PlayListBoxProps> = ({
   return (
     <Stack
       className={`w-full justify-center items-center gap-6 md:gap-16 ${
-        reverse?.mobile ? 'flex-col-reverse' : 'flex-col'
-      } ${reverse?.desktop ? 'md:flex-row-reverse' : 'md:flex-row'}`}
+        reverse?.sm ? 'flex-col-reverse' : 'flex-col'
+      } ${reverse?.md ? 'md:flex-row-reverse' : 'md:flex-row'}`}
     >
       <Box className="w-full md:w-5/12 aspect-video">
         <iframe src={src} allowFullScreen className="w-full h-full rounded-3xl" />

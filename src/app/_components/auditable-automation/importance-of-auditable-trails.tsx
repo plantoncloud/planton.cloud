@@ -42,11 +42,16 @@ const MediumGrayLabel: FC<TypographyProps> = (props) => {
 interface LabelAndSubLabelSectionProps {
   label: string;
   subLabel: string;
+  className?: string;
 }
 
-const LabelAndSubLabelSection: FC<LabelAndSubLabelSectionProps> = ({ label, subLabel }) => {
+const LabelAndSubLabelSection: FC<LabelAndSubLabelSectionProps> = ({
+  label,
+  subLabel,
+  className,
+}) => {
   return (
-    <Stack className="justify-start items-start gap-2.5">
+    <Stack className={`${className} justify-start items-start gap-2.5`}>
       <SemiboldLabel>{label}</SemiboldLabel>
       <MediumGrayLabel>{subLabel}</MediumGrayLabel>
     </Stack>
@@ -89,12 +94,12 @@ export const ImportanceOfAuditableTrails: FC = () => {
         <ChipLabel>The Importance of Auditable Trails</ChipLabel>
       </CenteredDivider>
 
-      <Box className="relative border border-zinc-800 mt-5">
-        <Box className="absolute left-[33.33%] w-px h-[calc(100%-175px)] border border-red-600 shadow-md z-0"></Box>
+      <Box className="relative md:border border-zinc-800 mt-5">
+        <Box className="hidden md:block absolute left-[33.33%] w-px h-[calc(100%-175px)] border border-red-600 shadow-md z-0"></Box>
         <Box className="absolute left-[33%] w-3 h-60 top-[440px] bg-neutral-950 shadow-md blur-sm z-0"></Box>
         <Box className="absolute left-[33.30%] w-1 h-60 top-[440px] bg-red-600 blur-md shadow-md z-0"></Box>
 
-        <Grid container className="bg-neutral-900">
+        <Grid container className="bg-neutral-900 relative">
           <Grid
             item
             xs={12}
@@ -121,9 +126,49 @@ export const ImportanceOfAuditableTrails: FC = () => {
               </RoundBtnSmall>
             </Stack>
           </Grid>
+          <Box
+            className="md:hidden h-20 w-px border transform absolute left-5 -bottom-16 -z-10"
+            style={{
+              borderImageSource:
+                'linear-gradient(133deg, #00BABA -23.75%, rgba(159, 11, 108, 0.67) 30.1%, rgba(0, 0, 0, 0.00) 97.94%)',
+              borderImageSlice: 1,
+            }}
+          />
         </Grid>
 
-        <Grid container className="mt-8 md:mt-32">
+        <Grid container className="pb-14 md:p-0 pl-5 md:pl-0 mt-32 relative">
+          <Box className="absolute h-full md:hidden">
+            <Box className="relative h-full ">
+              <Box
+                className="h-full w-px border transform absolute -top-3"
+                style={{
+                  borderImageSource:
+                    'linear-gradient(133deg, #00BABA -23.75%, rgba(159, 11, 108, 0.67) 30.1%, rgba(0, 0, 0, 0.00) 97.94%)',
+                  borderImageSlice: 1,
+                }}
+              />
+              <Box className="w-6 h-6 relative -left-1/2 top-6">
+                <Box className="w-6 h-6 left-0 top-0 absolute bg-teal-500 opacity-50 rounded-full blur-2xl" />
+                <Image
+                  src="/images/auditable-automation/NavigateIcon.svg"
+                  width={0}
+                  height={0}
+                  alt=""
+                  className="w-5 h-5 transform left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute z-20"
+                />
+              </Box>
+              <Box className="w-6 h-6 relative -left-1/2 -bottom-3/4">
+                <Box className="w-6 h-6 left-0 top-0 absolute bg-teal-500 opacity-50 rounded-full blur-2xl" />
+                <Image
+                  src="/images/auditable-automation/InterfaceIcon.svg"
+                  width={0}
+                  height={0}
+                  alt=""
+                  className="w-5 h-5 transform left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute z-20"
+                />
+              </Box>
+            </Box>
+          </Box>
           <Grid item xs={12} md={4} className="p-6">
             <LabelAndSubLabelSection
               label="Seamless Change Integration."
@@ -153,7 +198,7 @@ export const ImportanceOfAuditableTrails: FC = () => {
                 className="w-fit"
               />
               <Box className="p-4 md:p-6 bg-black rounded-lg border border-dashed border-white relative md:ml-12 md:mt-10">
-                <Box className="relative">
+                <Box className="hidden md:block relative">
                   <Image
                     src="/images/auditable-automation/line-1.svg"
                     alt=""
@@ -163,7 +208,7 @@ export const ImportanceOfAuditableTrails: FC = () => {
                   />
                   <RoundIcon
                     src="/images/auditable-automation/EyeIcon.svg"
-                    className="absolute -top-[8px] -left-[75px]"
+                    className="hidden md:flex absolute -top-[8px] -left-[75px]"
                   />
                 </Box>
                 <Typography
@@ -191,16 +236,30 @@ export const ImportanceOfAuditableTrails: FC = () => {
           </Grid>
         </Grid>
 
-        <Grid container className="mt-32">
-          <Grid item xs={12} md={4} className="p-6">
+        <Grid container className="pt-6 pb-16 md:p-0 md:mt-32">
+          <Grid item xs={12} md={4} className="relative md:p-6">
             <LabelAndSubLabelSection
               label="Navigating Change with Confidence"
               subLabel="Chronological record of modifications with “Version History” for enhanced decision-making
           and auditability."
+              className="ml-12 md:ml-0"
             />
+            <Box className="md:hidden absolute left-2 top-0">
+              <Box className="w-6 h-6 relative">
+                <Box className="w-6 h-6 left-0 top-0 absolute bg-purple-500 rounded-full blur-2xl" />
+                <Box
+                  className="h-28 w-px border left-1/2 0 absolute"
+                  style={{
+                    borderImageSource:
+                      'linear-gradient(133deg, #00BABA -23.75%, rgba(159, 11, 108, 0.67) 30.1%, rgba(0, 0, 0, 0.00) 97.94%)',
+                    borderImageSlice: 1,
+                  }}
+                />
+              </Box>
+            </Box>
           </Grid>
-          <Grid item xs={12} md={8} className="p-6">
-            <Box className="relative w-fit bg-zinc-900 rounded-xl ml-11">
+          <Grid item xs={12} md={8} className="py-6 md:p-6">
+            <Box className="relative w-fit bg-zinc-900 rounded-xl md:ml-11">
               <Image
                 src="/images/auditable-automation/version-list.svg"
                 alt=""
@@ -210,27 +269,49 @@ export const ImportanceOfAuditableTrails: FC = () => {
               />
               <RoundIcon
                 src="/images/auditable-automation/NavigateIcon.svg"
-                className="absolute -left-[88px] top-[80px]"
+                className="hidden md:flex absolute -left-[88px] top-[80px]"
+              />
+              <Box
+                className="md:hidden h-12 w-px border transform absolute left-5"
+                style={{
+                  borderImageSource:
+                    'linear-gradient(133deg, #00BABA -23.75%, rgba(159, 11, 108, 0.67) 30.1%, rgba(0, 0, 0, 0.00) 97.94%)',
+                  borderImageSlice: 1,
+                }}
               />
             </Box>
           </Grid>
         </Grid>
 
-        <Grid container className="mt-44">
+        <Grid container className="pt-6 pb-16 md:p-0 md:mt-44">
           <Grid item xs={12}>
             <Box className="relative">
               <RoundIcon
                 src="/images/auditable-automation/InterfaceIcon.svg"
-                className="absolute left-[405px] -top-[60px]"
+                className="hidden md:flex absolute left-[405px] -top-[60px]"
               />
-              <Box className="ml-[23%] max-w-[650px] h-96 p-6 bg-zinc-900 rounded-lg border border-zinc-800">
+              <Box className="relative max-w-[650px] md:h-96 md:p-6 md:ml-[23%] md:bg-zinc-900 rounded-lg md:border border-zinc-800">
                 <LabelAndSubLabelSection
                   label="Developer-Friendly Interface"
                   subLabel="Leveraging familiar interfaces like Git diffs within our platform simplifies cloud
               management, making complex tasks more approachable for developers."
+                  className="ml-12 md:ml-0"
                 />
+                <Box className="md:hidden absolute left-2 top-0">
+                  <Box className="w-6 h-6 relative">
+                    <Box className="w-6 h-6 left-0 top-0 absolute bg-green-500 rounded-full blur-2xl" />
+                    <Box
+                      className="h-28 w-px border left-1/2 0 absolute"
+                      style={{
+                        borderImageSource:
+                          'linear-gradient(133deg, #00BABA -23.75%, rgba(159, 11, 108, 0.67) 30.1%, rgba(0, 0, 0, 0.00) 97.94%)',
+                        borderImageSlice: 1,
+                      }}
+                    />
+                  </Box>
+                </Box>
               </Box>
-              <Box className="absolute top-[50%] left-[30%] w-fit bg-zinc-900 rounded-xl">
+              <Box className="w-fit mt-6 md:mt-0 md:absolute md:top-[50%] md:left-[30%] bg-zinc-900 rounded-xl relative">
                 <Image
                   src="/images/auditable-automation/diff-yaml.svg"
                   alt=""
@@ -238,25 +319,54 @@ export const ImportanceOfAuditableTrails: FC = () => {
                   height={0}
                   className="w-fit"
                 />
+                <Box
+                  className="md:hidden h-12 w-px border transform absolute left-7"
+                  style={{
+                    borderImageSource:
+                      'linear-gradient(133deg, #00BABA -23.75%, rgba(159, 11, 108, 0.67) 30.1%, rgba(0, 0, 0, 0.00) 97.94%)',
+                    borderImageSlice: 1,
+                  }}
+                />
               </Box>
-              <Box className="absolute left-[110%] top-[45%] w-[1095px] h-[500px] origin-top-left rotate-[100deg] opacity-30 mix-blend-screen  blur-[200px] justify-center items-start gap-24 inline-flex animate-pulse">
+              <Stack className="hidden md:flex flex-row absolute left-[110%] top-[45%] w-[1095px] h-[500px] origin-top-left rotate-[100deg] opacity-30 mix-blend-screen  blur-[200px] justify-center items-start gap-24 animate-pulse">
                 <Box className="w-[500px] h-[500px] bg-purple-500 rounded-full" />
                 <Box className="w-[500px] h-[500px] bg-orange-600 rounded-full" />
-              </Box>
+              </Stack>
             </Box>
           </Grid>
         </Grid>
 
-        <Grid container className="mt-72">
-          <Grid item xs={12} md={4} className="p-6">
+        <Grid container className="md:mt-72">
+          <Grid item xs={12} md={4} className="relative p-6">
             <LabelAndSubLabelSection
               label="Fortifying Cloud Infrastructure"
               subLabel="Auditable Automation not only tracks changes but also enhances security by ensuring each
           action is accountable."
+              className="ml-8 md:ml-0"
             />
+            <Box className="md:hidden absolute left-4 top-6">
+              <Box className="w-6 h-6 relative">
+                <Box className="w-6 h-6 left-0 top-0 absolute bg-cyan-500 rounded-full blur-2xl" />
+                <Image
+                  src="/images/code-to-cloud/cloud-Infrastructure.svg"
+                  width={0}
+                  height={0}
+                  alt=""
+                  className="w-5 h-5 transform left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute z-10"
+                />
+                <Box
+                  className="h-28 w-px border transform left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/4 absolute"
+                  style={{
+                    borderImageSource:
+                      'linear-gradient(133deg, #00BABA -23.75%, rgba(159, 11, 108, 0.67) 30.1%, rgba(0, 0, 0, 0.00) 97.94%)',
+                    borderImageSlice: 1,
+                  }}
+                />
+              </Box>
+            </Box>
           </Grid>
-          <Grid item xs={12} md={8} className="p-6">
-            <Box className="relative w-fit bg-zinc-900 rounded-xl ml-11">
+          <Grid item xs={12} md={8} className="px-3 pb-6 md:p-6">
+            <Box className="relative w-fit bg-zinc-900 rounded-xl md:ml-11">
               <Image
                 src="/images/auditable-automation/version-list.svg"
                 alt=""
@@ -266,7 +376,7 @@ export const ImportanceOfAuditableTrails: FC = () => {
               />
               <RoundIcon
                 src="/images/auditable-automation/NavigateIcon.svg"
-                className="absolute -left-[88px] top-[80px]"
+                className="hidden md:flex absolute -left-[88px] top-[80px]"
               />
             </Box>
           </Grid>

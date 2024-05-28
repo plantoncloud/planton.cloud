@@ -14,7 +14,7 @@ const playLists: PlayListBoxProps[] = [
     subTitle:
       'Deploy Open-Source Software Easily: Redis, Kafka, Solr, Postgres and more... on Kubernetes.',
     src: 'https://www.loom.com/embed/00c6678bcb2c42d4ab78cc6a42d057aa?sid=422baba7-dec0-4483-afd5-d874cd7f1d1a?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true',
-    reverse: { desktop: true },
+    reverse: { md: true },
   },
   {
     title: 'Cloud Control, Simplified',
