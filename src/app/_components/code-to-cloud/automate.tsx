@@ -54,7 +54,8 @@ export const Automate: FC = () => {
         </Box>
         <Stack className="self-stretch items-center gap-5 md:gap-10 relative">
           <Typography className="w-full md:w-10/12 lg:w-8/12 xl:w-4/12 text-center text-white text-[28px] !leading-snug md:text-5xl font-extrabold z-10">
-            Automate your workflow from idea to production with {'Code->Cloud'}
+            Automate your workflow from idea to production with{' '}
+            <span className="whitespace-nowrap">{'Code->Cloud'}</span>
           </Typography>
           <RoundBtn className="bg-white text-black px-8 py-4 text-base md:text-xl">
             Get Started with Code {`->`} Cloud

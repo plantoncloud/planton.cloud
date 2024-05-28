@@ -8,7 +8,7 @@ import { StyledPricingBorderGradient } from '../code-to-cloud/styled';
 export const Plan: FC<IPlan> = ({ imgSrc, name, price, period, features, isPopular }) => {
   return (
     <StyledPricingBorderGradient
-      className={`min-w-80 relative px-5 md:px-8 pt-5 md:pt-8 pb-4 bg-black rounded-2xl gap-8 z-10 ${
+      className={`h-full md:min-w-80 relative px-5 md:px-8 pt-5 md:pt-8 pb-4 bg-black rounded-2xl gap-8 z-10 ${
         isPopular ? 'border-4 border-slate-900 yellow-border-gradient mt-4 md:mt-0' : ''
       }`}
     >
