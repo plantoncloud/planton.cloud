@@ -32,7 +32,7 @@ export const ChipIacWorkflow: FC<IChipIacWorkflow> = ({
             />
             <Typography
               {...labelProps}
-              className={`text-white text-xs md:text-base font-normal ${
+              className={`text-white text-sm md:text-base font-normal ${
                 labelProps?.className || ''
               }`}
             >

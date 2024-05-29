@@ -14,4 +14,5 @@ export interface IPlan {
   period: string;
   features: string[];
   isPopular?: boolean;
+  className?: string;
 }

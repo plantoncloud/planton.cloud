@@ -6,16 +6,16 @@ import { ChipIacWorkflow, RoundBtn, StyledStreamLineContainer } from '@/app/_com
 export const StreamLineDevOps: FC = () => {
   return (
     <>
-      <StyledStreamLineContainer className="w-full h-[calc(40vh+60px)] md:h-screen absolute z-10 bg-cover bg-center" />
-      <Stack className="md:hidden relative z-20 items-center pt-6">
+      <StyledStreamLineContainer className="w-full h-[70vh] md:h-screen absolute z-10 bg-cover bg-center" />
+      <Stack className="md:hidden px-5 pt-5 relative z-20 items-center">
         <ChipIacWorkflow
           labelProps={{
-            className: 'z-20 !text-base',
+            className: 'z-20',
             children: 'Introducing Integrated IaC Workflows',
           }}
         />
       </Stack>
-      <Stack className="h-[40vh] md:h-screen justify-center items-center flex-row">
+      <Stack className="h-[60vh] md:h-screen justify-center items-center flex-row">
         <Box className="relative z-10">
           <Box className="w-96 h-64 bg-fuchsia-950 rounded-full absolute top-44 blur-3xl bg-opacity-50 right-0" />
         </Box>

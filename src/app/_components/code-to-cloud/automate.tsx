@@ -48,7 +48,6 @@ export const Automate: FC = () => {
           <ChipIacWorkflow
             labelProps={{
               children: 'Introducing Integrated IaC Workflows',
-              className: '!text-base',
             }}
           />
         </Box>
@@ -78,7 +77,7 @@ export const Automate: FC = () => {
         breakpoints={{ 768: { slidesPerView: 5 } }}
       />
       <Box className="w-full relative">
-        <Box className="w-full md:w-[250%] aspect-square bg-gradient-to-br from-indigo-950 from-65% via-indigo-800 to-transparent to-70%  rounded-[200px] blur-3xl absolute -top-64 md:-top-10 rotate-45 left-1/2 transform -translate-x-1/2" />
+        <Box className="w-full aspect-square bg-gradient-to-br from-indigo-950 from-65% via-indigo-800 to-transparent to-70%  rounded-[200px] blur-3xl absolute -top-64 md:-top-[640px] rotate-45 left-1/2 transform -translate-x-1/2" />
       </Box>
       <Box className="relative mx-auto">
         <Stack className="hidden md:block absolute -top-28 w-full flex-row inset-0 items-center justify-between">

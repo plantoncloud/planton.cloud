@@ -147,8 +147,8 @@ export const ImportanceOfAuditableTrails: FC = () => {
                   borderImageSlice: 1,
                 }}
               />
-              <Box className="w-6 h-6 relative -left-1/2 top-6">
-                <Box className="w-6 h-6 left-0 top-0 absolute bg-teal-500 opacity-50 rounded-full blur-2xl" />
+              <Box className="w-10 h-10 relative -left-1/2 top-6">
+                <Box className="w-10 h-10 left-0 top-0 absolute bg-teal-500 rounded-full blur-xl" />
                 <Image
                   src="/images/auditable-automation/NavigateIcon.svg"
                   width={0}
@@ -157,8 +157,7 @@ export const ImportanceOfAuditableTrails: FC = () => {
                   className="w-5 h-5 transform left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute z-20"
                 />
               </Box>
-              <Box className="w-6 h-6 relative -left-1/2 -bottom-3/4">
-                <Box className="w-6 h-6 left-0 top-0 absolute bg-teal-500 opacity-50 rounded-full blur-2xl" />
+              <Box className="w-10 h-10 relative -left-1/2 -bottom-3/4">
                 <Image
                   src="/images/auditable-automation/InterfaceIcon.svg"
                   width={0}
@@ -244,11 +243,11 @@ export const ImportanceOfAuditableTrails: FC = () => {
           and auditability."
               className="ml-12 md:ml-0"
             />
-            <Box className="md:hidden absolute left-2 top-0">
-              <Box className="w-6 h-6 relative">
-                <Box className="w-6 h-6 left-0 top-0 absolute bg-purple-500 rounded-full blur-2xl" />
+            <Box className="md:hidden absolute left-0 top-0">
+              <Box className="w-10 h-10 relative">
+                <Box className="w-10 h-10 left-0 top-0 absolute bg-purple-500 rounded-full blur-xl" />
                 <Box
-                  className="h-28 w-px border left-1/2 0 absolute"
+                  className="h-36 w-px border transform left-1/2 -translate-x-1/2 -top-3 absolute"
                   style={{
                     borderImageSource:
                       'linear-gradient(133deg, #00BABA -23.75%, rgba(159, 11, 108, 0.67) 30.1%, rgba(0, 0, 0, 0.00) 97.94%)',
@@ -297,11 +296,11 @@ export const ImportanceOfAuditableTrails: FC = () => {
               management, making complex tasks more approachable for developers."
                   className="ml-12 md:ml-0"
                 />
-                <Box className="md:hidden absolute left-2 top-0">
-                  <Box className="w-6 h-6 relative">
-                    <Box className="w-6 h-6 left-0 top-0 absolute bg-green-500 rounded-full blur-2xl" />
+                <Box className="md:hidden absolute top-0">
+                  <Box className="w-10 h-10 relative">
+                    <Box className="w-10 h-10 left-0 top-0 absolute bg-green-500 rounded-full blur-xl" />
                     <Box
-                      className="h-28 w-px border left-1/2 0 absolute"
+                      className="h-32 w-px border transform left-1/2 -translate-x-1/2 absolute"
                       style={{
                         borderImageSource:
                           'linear-gradient(133deg, #00BABA -23.75%, rgba(159, 11, 108, 0.67) 30.1%, rgba(0, 0, 0, 0.00) 97.94%)',
@@ -344,9 +343,9 @@ export const ImportanceOfAuditableTrails: FC = () => {
           action is accountable."
               className="ml-8 md:ml-0"
             />
-            <Box className="md:hidden absolute left-4 top-6">
-              <Box className="w-6 h-6 relative">
-                <Box className="w-6 h-6 left-0 top-0 absolute bg-cyan-500 rounded-full blur-2xl" />
+            <Box className="md:hidden absolute left-2 top-6">
+              <Box className="w-10 h-10 relative">
+                <Box className="w-10 h-10 left-0 top-0 absolute bg-cyan-500 rounded-full blur-xl" />
                 <Image
                   src="/images/code-to-cloud/cloud-Infrastructure.svg"
                   width={0}
@@ -355,7 +354,7 @@ export const ImportanceOfAuditableTrails: FC = () => {
                   className="w-5 h-5 transform left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute z-10"
                 />
                 <Box
-                  className="h-28 w-px border transform left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/4 absolute"
+                  className="h-36 w-px border transform left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/4 absolute"
                   style={{
                     borderImageSource:
                       'linear-gradient(133deg, #00BABA -23.75%, rgba(159, 11, 108, 0.67) 30.1%, rgba(0, 0, 0, 0.00) 97.94%)',

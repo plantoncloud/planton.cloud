@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, useEffect, useRef } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { plans } from '@/app/_utils/constants';
@@ -16,27 +16,29 @@ const responsive = {
 
 export const PricingCarousel: FC = () => {
   const carouselRef = useRef(null);
-  const middleIndex = Math.floor(plans.length / 2);
+  const [currentIndex, setCurrentIndex] = useState(1);
 
   useEffect(() => {
     if (carouselRef.current) {
-      carouselRef.current.goToSlide(middleIndex - 1, false);
+      carouselRef.current.goToSlide(1, false);
     }
-  }, [middleIndex]);
+  }, [carouselRef]);
+
 
   return (
     <Carousel
       ref={carouselRef}
       swipeable={true}
       responsive={responsive}
-      infinite={true}
+      infinite={false}
       centerMode={true}
       itemClass="px-2"
       arrows={false}
       showDots={false}
+      afterChange={(_, { currentSlide }) => setCurrentIndex(currentSlide)}
     >
       {plans.map((plan, index) => (
-        <Plan {...plan} key={index} />
+        <Plan {...plan} key={index} className={index !== currentIndex ? 'bg-zinc-800' : ''} />
       ))}
     </Carousel>
   );
