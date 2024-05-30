@@ -1,11 +1,21 @@
 'use client';
-import { FC, ReactNode, SyntheticEvent, useMemo, useRef, useState } from 'react';
+import {
+  FC,
+  Fragment,
+  ReactNode,
+  SyntheticEvent,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import {
   Box,
   ClickAwayListener,
   Grow,
+  MenuList,
   Paper,
   Popper,
   Stack,
@@ -20,26 +30,18 @@ import { IMenu } from '@/app/_utils/interfaces';
 interface IMenuItem {
   label: ReactNode;
   href?: string;
+  onClick?: () => void;
 }
 
-const FeatureItem: FC<IMenuItem> = ({ label, href }) => {
+const FeatureItem: FC<IMenuItem> = ({ label, href, onClick }) => {
   return (
     <Link
       href={href}
       className="w-full px-3 py-3 bg-neutral-900 first:rounded-t-lg last:rounded-b-lg shadow"
+      onClick={onClick}
     >
       <Typography className="text-white text-xs font-normal">{label}</Typography>
     </Link>
-  );
-};
-
-const FeatureList: FC = () => {
-  return (
-    <Stack className="justify-center items-start">
-      {productMainMenus.map((menuItem, index) => (
-        <FeatureItem key={index} href={menuItem.href} label={menuItem.label} />
-      ))}
-    </Stack>
   );
 };
 
@@ -82,30 +84,45 @@ export const FeaturesMobile: FC = () => {
           <ExpandMore className="ml-2" />
         </Stack>
       </Stack>
-      <Popper
-        open={openMenu}
-        anchorEl={anchorRef.current}
-        role={undefined}
-        placement="bottom-start"
-        transition
-        disablePortal
-        className="z-50"
-      >
-        {({ TransitionProps, placement }) => (
-          <Grow
-            {...TransitionProps}
-            style={{
-              transformOrigin: placement === 'bottom-start' ? 'left top' : 'left bottom',
-            }}
-          >
-            <Paper className="rounded-lg">
-              <ClickAwayListener onClickAway={handleClose}>
-                <FeatureList />
-              </ClickAwayListener>
-            </Paper>
-          </Grow>
-        )}
-      </Popper>
+      <ClickAwayListener onClickAway={handleClose}>
+        <Popper
+          open={openMenu}
+          anchorEl={anchorRef.current}
+          role={undefined}
+          placement="bottom-start"
+          transition
+          disablePortal
+          className="z-50"
+        >
+          {({ TransitionProps, placement }) => (
+            <Grow
+              {...TransitionProps}
+              style={{
+                transformOrigin: placement === 'bottom-start' ? 'left top' : 'left bottom',
+              }}
+            >
+              <Paper className="rounded-lg">
+                <MenuList
+                  autoFocusItem={openMenu}
+                  id="composition-menu"
+                  aria-labelledby="composition-button"
+                  component="div"
+                  className="flex flex-col py-0"
+                >
+                  {productMainMenus.map((menuItem, index) => (
+                    <FeatureItem
+                      key={index}
+                      href={menuItem.href}
+                      label={menuItem.label}
+                      onClick={handleToggle}
+                    />
+                  ))}
+                </MenuList>
+              </Paper>
+            </Grow>
+          )}
+        </Popper>
+      </ClickAwayListener>
     </>
   );
 };
