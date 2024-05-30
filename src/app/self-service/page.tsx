@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function SelfServiceDevOps() {
   return (
     <>
-      <Box className="bg-gray-800 bg-opacity-40">
+      <Box className="bg-gray-800 bg-opacity-40 overflow-x-hidden">
         <StreamLineDevOps />
         <FromZeroToHero />
         <PlayList />

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function IacWorkFlow() {
   return (
-    <Box className="relative bg-zinc-800 bg-opacity-40">
+    <Box className="relative bg-zinc-800 bg-opacity-40 overflow-x-hidden">
       <GetStarted />
       <Extensible />
       <IacWorkFlowPlayList />

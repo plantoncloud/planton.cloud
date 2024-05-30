@@ -3,12 +3,19 @@ import Image from 'next/image';
 import { Stack, Typography } from '@mui/material';
 import { IPlan } from '@/app/_utils/interfaces';
 import { RoundBtnSmall } from './btn';
-import { StyledPricingBorderGradient } from '../code-to-cloud/styled';
 
-export const Plan: FC<IPlan> = ({ imgSrc, name, price, period, features, isPopular }) => {
+export const Plan: FC<IPlan> = ({
+  imgSrc,
+  name,
+  price,
+  period,
+  features,
+  isPopular,
+  className,
+}) => {
   return (
-    <StyledPricingBorderGradient
-      className={`h-full md:min-w-80 relative px-5 md:px-8 pt-5 md:pt-8 pb-4 bg-black rounded-2xl gap-8 z-10 ${
+    <Stack
+      className={`${className} h-full md:min-w-80 relative px-5 md:px-8 pt-5 md:pt-8 pb-4 bg-black opacity-80 rounded-2xl gap-8 z-10 ${
         isPopular ? 'border-4 border-slate-900 yellow-border-gradient mt-4 md:mt-0' : ''
       }`}
     >
@@ -59,6 +66,6 @@ export const Plan: FC<IPlan> = ({ imgSrc, name, price, period, features, isPopul
       <RoundBtnSmall className="px-4 py-2.5 self-stretch bg-teal-600 border-none">
         Choose Plan
       </RoundBtnSmall>
-    </StyledPricingBorderGradient>
+    </Stack>
   );
 };
