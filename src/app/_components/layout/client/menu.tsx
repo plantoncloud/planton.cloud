@@ -28,10 +28,11 @@ const StyledLeftItemContainer = styled(Stack)(({ theme }) => ({
   },
 }));
 
-export const ProductMenuItem: FC<IMenu> = ({ label, subLabel, icon: Icon, href }) => {
+export const ProductMenuItem: FC<IMenu> = ({ label, subLabel, icon: Icon, href, onClick }) => {
   return (
     <Link
       href={href ?? ''}
+      onClick={onClick}
       className="w-full pl-3 pr-2.5 pt-3 pb-5 backdrop-blur-md md:hover:bg-zinc-900  md:hover:first:rounded-t-xl md:hover:last:rounded-b-xl md:border-b md:last:border-b-0 md:border-zinc-900 "
     >
       <StyledLeftItemContainer className="gap-1 justify-center items-start">
@@ -122,6 +123,7 @@ export const ProductMenu: FC = () => {
                         label={menuItem.label}
                         subLabel={menuItem.subLabel}
                         href={menuItem.href}
+                        onClick={handleToggle}
                       />
                     ))}
                   </Stack>

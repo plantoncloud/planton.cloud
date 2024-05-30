@@ -5,6 +5,7 @@ export interface IMenu {
   label: string;
   subLabel?: string;
   href?: string;
+  onClick?: () => void;
 }
 
 export interface IPlan {

@@ -129,6 +129,7 @@ function HeaderMobile() {
                         label={menuItem.label}
                         subLabel={menuItem.subLabel}
                         href={menuItem.href}
+                        onClick={handleClick}
                       />
                     ))}
                   </Stack>

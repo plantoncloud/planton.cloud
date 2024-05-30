@@ -46,7 +46,10 @@ const OrgList: FC = () => {
 export const InternalDeveloperSection: FC = () => {
   return (
     <>
-      <StyledLayoutContainer className="w-full h-[796px] absolute z-0 bg-cover" />
+      <StyledLayoutContainer className="w-full h-[796px] absolute z-0 bg-cover">
+        <Box className="w-full h-32 absolute -bottom-16 bg-black blur-xl -z-10 mix-blend-hard-light" />
+      </StyledLayoutContainer>
+
       <Stack className="gap-5 pt-5 px-5 md:gap-16 md:px-0 md:ml-[15%] md:pt-48">
         <Stack className="gap-7 z-10">
           <ChipIacWorkflow
