@@ -9,7 +9,7 @@ interface LayoutProps {
 
 export const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <Box className="h-screen bg-cover bg-center overflow-x-hidden">
+    <Box className="h-screen bg-cover bg-center">
       <Header />
       <Box>{children}</Box>
       <Footer />

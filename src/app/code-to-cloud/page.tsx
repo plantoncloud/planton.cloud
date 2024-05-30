@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function CodeToCloud() {
   return (
     <>
-      <Box className="relative bg-black mt-5 md:mt-20">
+      <Box className="relative bg-black pt-5 md:pt-20 overflow-x-hidden">
         <Automate />
         <IdeaToLaunch />
         <Pricing />
