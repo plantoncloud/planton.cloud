@@ -59,7 +59,7 @@ export const CarouselItem: FC<ICarouselItem> = ({ labels, isMobile }) => {
 
   return (
     <Box
-      className={`word-carousel h-[38px] md:h-[72px] px-2.5 py-1.5 rounded-lg md:rounded-2xl border border-neutral-400 `}
+      className={`word-carousel h-[38px] md:h-[72px] px-2.5 py-1.5 rounded-lg md:rounded-2xl border border-neutral-400`}
       sx={{ width: animWidth, transition: 'width 0.5s ease-in-out' }}
     >
       <Box
@@ -78,7 +78,7 @@ export const CarouselItem: FC<ICarouselItem> = ({ labels, isMobile }) => {
 
 export const CarouselSection: FC<CarouselSectionProps> = ({ title, labels }) => {
   return (
-    <Stack className="md:flex-row justify-start md:items-center gap-3 md:gap-5">
+    <Stack className="md:flex-row justify-start md:items-center gap-3 md:gap-5 z-10">
       <PrimaryLabel>{title}</PrimaryLabel>
       {labels.length > 0 && (
         <>

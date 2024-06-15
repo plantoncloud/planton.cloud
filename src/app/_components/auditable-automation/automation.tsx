@@ -35,6 +35,7 @@ export const Automation: FC = () => {
         ))}
       </Stack>
       <Box className="-z-10 md:z-0 absolute right-0 top-0 -mt-36 -mr-40 overflow-hidden">
+        <Box className="w-full h-full bg-black bg-opacity-50 absolute" />
         <video width="800" height="800" autoPlay={true} loop={true} muted playsInline>
           <source src="images/auditable-automation/animation-1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
