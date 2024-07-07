@@ -38,10 +38,14 @@ function HeaderComputer() {
           </Link>
         </MenuSection>
         <MenuSection>
-          <Button variant="contained" className="bg-primary-50 p-[10px] rounded-[32px] px-4">
-            Sign In
-          </Button>
-          <Button>Sign Up</Button>
+          <Link href="https://console.planton.cloud/" target="_blank" className="mr-4">
+            <Button variant="contained" className="bg-primary-50 p-[10px] rounded-[32px] px-4">
+              Sign In
+            </Button>
+          </Link>
+          <Link href="https://console.planton.cloud/" target="_blank" className="mr-4">
+            <Button>Sign Up</Button>
+          </Link>
           <Link href="https://console.planton.cloud/" target="_blank" className="mr-4">
             <Stack className="flex-row">
               <Typography className="text-sm">Open Console</Typography>
@@ -106,12 +110,16 @@ function HeaderMobile() {
         {({ TransitionProps }) => (
           <Fade {...TransitionProps} timeout={350}>
             <Stack className="px-1.5 py-6 bg-black bg-opacity-20 backdrop-blur-xl gap-3">
-              <RoundBtn variant="contained" className="bg-primary-50 w-full">
-                Sign In
-              </RoundBtn>
-              <RoundBtn variant="contained" className="bg-zinc-900 bg-opacity-90 w-full">
-                Sign Up
-              </RoundBtn>
+              <Link href="https://console.planton.cloud/" target="_blank" className="mr-4">
+                <RoundBtn variant="contained" className="bg-primary-50 w-full">
+                  Sign In
+                </RoundBtn>
+              </Link>
+              <Link href="https://console.planton.cloud/" target="_blank" className="mr-4">
+                <RoundBtn variant="contained" className="bg-zinc-900 bg-opacity-90 w-full">
+                  Sign Up
+                </RoundBtn>
+              </Link>
               <Box className="px-4 pb-2.5 pt-5">
                 <Stack
                   className="items-center justify-between flex-row  cursor-pointer"
