@@ -128,3 +128,5 @@ export const plans: IPlan[] = [
     ],
   },
 ];
+
+export const GA_CODE = 'G-VWZNWQPEJ0';
