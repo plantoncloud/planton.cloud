@@ -22,6 +22,7 @@
     "@mui/material": "^5.15.10",
     "@mui/material-nextjs": "^5.15.11",
     "@mui/styles": "^5.15.10",
+    "@next/third-parties": "latest",
     "@svgr/webpack": "^8.1.0",
     "@vercel/speed-insights": "^1.0.10",
     "lottie-web": "^5.12.2",
