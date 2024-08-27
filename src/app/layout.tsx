@@ -26,7 +26,11 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      {!localhost && <GoogleAnalytics gaId={GA_CODE} />}
+      {!localhost && <>
+        <GoogleAnalytics gaId={GA_CODE} />
+        <meta name="google-site-verification" content="-Z5sYWOAPH3IBD0PQKmuJoQE7QvVAv0-FYutGR2unw0" />
+        </>
+      }
       <body>
         <Providers>
           <Layout>{children}</Layout>
